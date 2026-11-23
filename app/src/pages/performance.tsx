@@ -2,11 +2,11 @@ import { Download, Euro, Lock } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import { PageHeader, Panel } from '@/components/common'
-import { BarChart, Legend } from '@/components/charts'
+import { BarChart, HBarChart, Legend } from '@/components/charts'
 import { AnimatedNumber, Kpi, KpiGrid } from '@/components/kpi'
 import { CA, MONTHS } from '@/lib/data'
 import { downloadCsv, isCro, planObj, sumV } from '@/lib/business'
-import { eur, eur2 } from '@/lib/format'
+import { eur2 } from '@/lib/format'
 import { useAppState } from '@/lib/store'
 
 export function PerformancePage() {
@@ -62,22 +62,24 @@ export function PerformancePage() {
           <BarChart labels={MONTHS} values={CA} />
         </Panel>
         <Panel title="Octobre par levier">
-          <Legend
-            items={
-              cro
-                ? [
-                    { col: '#B8426D', l: 'Clientes revenues', v: '14 · 910 €' },
-                    { col: '#3E2646', l: 'Cures vendues', v: '5 · 1 350 €' },
-                    { col: '#C9A877', l: 'Produits', v: '420 €' },
-                    { col: '#EBB9C7', l: 'Parrainage', v: '2 filleules · 160 €' },
-                    { col: '#8A5A7A', l: 'Ventes complémentaires', v: eur(done) },
-                  ]
-                : [
-                    { col: '#B8426D', l: 'Clientes revenues', v: '14 · 910 €' },
-                    { col: '#E7DAE0', l: 'Cures, produits, ventes +, parrainage', v: 'Croissance', muted: true },
-                  ]
-            }
-          />
+          {cro ? (
+            <HBarChart
+              items={[
+                { k: 'reconquete', l: 'Clientes revenues', v: 910, col: '#B8426D' },
+                { k: 'cure', l: 'Cures vendues', v: 1350, col: '#3E2646' },
+                { k: 'produit', l: 'Produits', v: 420, col: '#C9A877' },
+                { k: 'parrainage', l: 'Parrainage', v: 160, col: '#EBB9C7' },
+                { k: 'panier', l: 'Ventes complémentaires', v: done, col: '#8A5A7A' },
+              ]}
+            />
+          ) : (
+            <Legend
+              items={[
+                { col: '#B8426D', l: 'Clientes revenues', v: '14 · 910 €' },
+                { col: '#E7DAE0', l: 'Cures, produits, ventes +, parrainage', v: 'Croissance', muted: true },
+              ]}
+            />
+          )}
         </Panel>
       </div>
     </>

@@ -108,7 +108,7 @@ export function DashboardPage() {
         </Panel>
         <Panel title="Potentiel par levier" sub="octobre">
           <div className="flex flex-wrap items-center gap-5">
-            <Donut parts={byT} total={tot} />
+            <Donut parts={byT.map((x) => ({ ...x, l: TYPES[x.k].l }))} total={tot} />
             <Legend
               items={[
                 ...byT.map((x) => ({ col: x.col, l: TYPES[x.k].l, v: eur(x.v) })),

@@ -1,66 +1,86 @@
+import { Bar, BarChart as RBarChart, Cell, Label, LabelList, Pie, PieChart, XAxis, YAxis } from 'recharts'
+import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { fmt } from '@/lib/format'
 
+const reduce = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+const euro = (v: unknown) => `${fmt(Number(v))} €`
+
+/* CA bonus par mois : barres verticales, le dernier mois mis en avant */
+const barConfig = {
+  v: { label: 'CA bonus', color: 'var(--chart-2)' },
+  last: { label: 'Mois en cours', color: 'var(--chart-1)' },
+} satisfies ChartConfig
+
 export function BarChart({ labels, values }: { labels: string[]; values: number[] }) {
-  const W = 520
-  const H = 210
-  const max = Math.max(...values) * 1.15
-  const bw = 50
-  const gap = (W - 40 - bw * values.length) / (values.length - 1)
+  const data = labels.map((m, i) => ({ m, v: values[i] }))
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="CA bonus par mois">
-      <title>CA bonus par mois</title>
-      {values.map((v, i) => {
-        const h = (v / max) * (H - 54)
-        const x = 20 + i * (bw + gap)
-        const y = H - 30 - h
-        const last = i === values.length - 1
-        return (
-          <g key={labels[i]}>
-            <rect x={x} y={y} width={bw} height={h} rx={8} fill={last ? '#B8426D' : '#3E2646'} opacity={last ? 1 : 0.85} />
-            <text x={x + bw / 2} y={y - 8} textAnchor="middle" className="fill-ink text-[13px] font-semibold">
-              {fmt(v)}
-            </text>
-            <text x={x + bw / 2} y={H - 9} textAnchor="middle" className="fill-ink-2 text-[12px]">
-              {labels[i]}
-            </text>
-          </g>
-        )
-      })}
-    </svg>
+    <ChartContainer config={barConfig} className="aspect-auto h-[240px] w-full" aria-label="CA bonus par mois">
+      <RBarChart data={data} margin={{ top: 28, right: 4, left: 4, bottom: 0 }}>
+        <XAxis dataKey="m" tickLine={false} axisLine={false} tickMargin={10} />
+        <ChartTooltip cursor={{ fill: 'var(--muted)', radius: 10 }} content={<ChartTooltipContent hideIndicator formatter={(v) => <span className="font-semibold tabular-nums">{euro(v)}</span>} />} />
+        <Bar dataKey="v" radius={10} maxBarSize={64} isAnimationActive={!reduce} animationDuration={900}>
+          {data.map((d, i) => (
+            <Cell key={d.m} fill={i === data.length - 1 ? 'var(--color-last)' : 'var(--color-v)'} fillOpacity={i === data.length - 1 ? 1 : 0.85} />
+          ))}
+          <LabelList dataKey="v" position="top" offset={10} className="fill-foreground text-[13px] font-semibold" formatter={(v: unknown) => fmt(Number(v))} />
+        </Bar>
+      </RBarChart>
+    </ChartContainer>
   )
 }
 
-export function Donut({ parts, total }: { parts: { k: string; v: number; col: string }[]; total: number }) {
-  const R = 54
-  const C = 2 * Math.PI * R
-  const offsets = parts.map((_, i) => parts.slice(0, i).reduce((a, p) => a + (total ? (p.v / total) * C : 0), 0))
+/* Potentiel par levier : anneau avec total au centre */
+export function Donut({ parts, total }: { parts: { k: string; v: number; col: string; l?: string }[]; total: number }) {
+  const config = Object.fromEntries(parts.map((p) => [p.k, { label: p.l ?? p.k, color: p.col }])) satisfies ChartConfig
+  const data = parts.map((p) => ({ k: p.k, v: p.v, fill: `var(--color-${p.k})` }))
   return (
-    <svg viewBox="0 0 140 140" width="140" height="140" aria-hidden="true" className="shrink-0">
-      <circle r={R} cx="70" cy="70" fill="none" stroke="#F1E8EC" strokeWidth="18" />
-      {parts.map((p, i) => {
-        const d = total ? (p.v / total) * C : 0
-        return (
-          <circle
-            key={p.k}
-            r={R}
-            cx="70"
-            cy="70"
-            fill="none"
-            stroke={p.col}
-            strokeWidth="18"
-            strokeDasharray={`${d} ${C - d}`}
-            strokeDashoffset={-offsets[i]}
-            transform="rotate(-90 70 70)"
+    <ChartContainer config={config} className="aspect-square h-[170px] shrink-0">
+      <PieChart>
+        <ChartTooltip cursor={false} content={<ChartTooltipContent nameKey="k" hideLabel formatter={(v, _n, item) => (
+          <div className="flex w-full items-center gap-2">
+            <i className="size-2.5 shrink-0 rounded-full" style={{ background: (item.payload as { fill: string }).fill }} />
+            <span className="text-muted-foreground">{config[(item.payload as { k: string }).k]?.label}</span>
+            <b className="ml-auto font-semibold tabular-nums">{euro(v)}</b>
+          </div>
+        )} />} />
+        <Pie data={data} dataKey="v" nameKey="k" innerRadius={56} outerRadius={80} strokeWidth={3} stroke="var(--card)" paddingAngle={1} isAnimationActive={!reduce} animationDuration={900}>
+          <Label
+            content={({ viewBox }) => {
+              if (!viewBox || !('cx' in viewBox)) return null
+              return (
+                <text x={viewBox.cx} y={viewBox.cy} textAnchor="middle" dominantBaseline="middle">
+                  <tspan x={viewBox.cx} y={(viewBox.cy ?? 0) - 6} className="fill-foreground text-lg font-semibold">{fmt(total)} €</tspan>
+                  <tspan x={viewBox.cx} y={(viewBox.cy ?? 0) + 14} className="fill-muted-foreground text-xs">potentiel</tspan>
+                </text>
+              )
+            }}
           />
-        )
-      })}
-      <text x="70" y="68" textAnchor="middle" className="fill-ink text-[17px] font-semibold">
-        {fmt(total)} €
-      </text>
-      <text x="70" y="85" textAnchor="middle" className="fill-ink-2 text-[10px]">
-        potentiel
-      </text>
-    </svg>
+        </Pie>
+      </PieChart>
+    </ChartContainer>
+  )
+}
+
+/* Répartition par levier : barres horizontales */
+export function HBarChart({ items }: { items: { k: string; l: string; v: number; col: string; note?: string }[] }) {
+  const config = Object.fromEntries(items.map((x) => [x.k, { label: x.l, color: x.col }])) satisfies ChartConfig
+  const data = items.map((x) => ({ k: x.k, l: x.l, v: x.v, note: x.note, fill: `var(--color-${x.k})` }))
+  return (
+    <ChartContainer config={config} className="aspect-auto w-full" style={{ height: items.length * 46 + 10 }}>
+      <RBarChart data={data} layout="vertical" margin={{ top: 0, right: 64, left: 0, bottom: 0 }} barCategoryGap={10}>
+        <YAxis dataKey="l" type="category" tickLine={false} axisLine={false} width={150} tick={{ fontSize: 13 }} />
+        <XAxis type="number" dataKey="v" hide />
+        <ChartTooltip cursor={false} content={<ChartTooltipContent nameKey="k" hideLabel formatter={(v, _n, item) => (
+          <div className="flex w-full items-center gap-2">
+            <span className="text-muted-foreground">{(item.payload as { l: string }).l}</span>
+            <b className="ml-auto font-semibold tabular-nums">{euro(v)}</b>
+          </div>
+        )} />} />
+        <Bar dataKey="v" radius={8} isAnimationActive={!reduce} animationDuration={900}>
+          <LabelList dataKey="v" position="right" offset={8} className="fill-foreground text-[13px] font-semibold" formatter={(v: unknown) => euro(v)} />
+        </Bar>
+      </RBarChart>
+    </ChartContainer>
   )
 }
 
