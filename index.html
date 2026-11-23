@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#FBF7FC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Instrument+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('x-js')}catch(e){}</script>
 <style>
 :root{
   --rose:#F9CFDD;--rose-2:#F3A9C4;--lav:#D6C8F5;--lav-2:#B29BEE;--mint:#CBEFDF;--mint-ink:#1E8A62;--sky:#D6E8F5;--sky-ink:#2E6FA3;--peach:#FBE0CF;--peach-ink:#C2622A;--red:#FDE7EE;--red-ink:#B4255D;
@@ -643,235 +644,669 @@ footer.site-footer{padding:clamp(3rem,6vw,5rem) 0 calc(2rem + env(safe-area-inse
 .tour-welcome li i{width:24px;height:24px;border-radius:50%;background:var(--g-brand);color:#fff;font-style:normal;font-size:.72rem;font-weight:800;display:grid;place-items:center;flex:none}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}.reveal{opacity:1;transform:none}.step{opacity:1;transform:none}.pres-top .seg.active i{animation:none;width:100%}}
+
+/* ===================================================================
+   SITE VITRINE · refonte « Maison » (branche Test)
+   Monde : un institut de beauté haut de gamme, le soir.
+   Aubergine profonde, porcelaine rosée, blush, champagne.
+   Bodoni Moda pour la voix, Instrument Sans pour le texte.
+   =================================================================== */
+#view-site{
+  --x-night:#1D1322;--x-night-2:#2A1B31;--x-plum:#3E2646;
+  --x-porcelain:#F6F0F2;--x-porcelain-2:#EEE4E8;--x-paper:#FFFBFC;
+  --x-blush:#EBB9C7;--x-blush-2:#F6D9E1;--x-rose:#B8426D;--x-rose-2:#9C3159;
+  --x-champagne:#D9C2A0;--x-ink:#22172A;--x-ink-2:#5E5068;--x-ink-3:#8A7D92;
+  --x-on-night:#F6ECEF;--x-on-night-2:rgba(246,236,239,.72);--x-on-night-3:rgba(246,236,239,.5);
+  --x-line:rgba(34,23,42,.1);--x-line-night:rgba(246,236,239,.14);
+  --x-serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --x-sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --x-ease:cubic-bezier(.16,1,.3,1);
+  --x-max:1240px;--x-pad:clamp(1rem,4vw,2.75rem);
+  --x-r:14px;
+  font-family:var(--x-sans);color:var(--x-ink);background:var(--x-porcelain);
+  font-size:clamp(1rem,.96rem + .2vw,1.08rem);line-height:1.6;
+}
+#view-site ::selection{background:var(--x-blush);color:var(--x-night)}
+#view-site section{padding:0}
+#view-site p{max-width:62ch}
+#view-site h1,#view-site h2,#view-site h3{font-family:var(--x-serif);font-weight:500;letter-spacing:-0.02em;line-height:1.04;text-wrap:balance}
+#view-site h3{font-family:var(--x-sans);font-weight:600;letter-spacing:-0.01em;line-height:1.25;font-size:clamp(1.08rem,1rem + .35vw,1.25rem)}
+#view-site :focus-visible{outline:2px solid var(--x-rose);outline-offset:3px;border-radius:4px}
+#view-site .x-night :focus-visible,#view-site .x-hero :focus-visible{outline-color:var(--x-blush)}
+#view-site a{text-underline-offset:.2em}
+html{scrollbar-color:var(--x-plum,#3E2646) transparent}
+.x-wrap{width:min(var(--x-max),100% - 2*var(--x-pad));margin-inline:auto}
+.x-night{background:var(--x-night);color:var(--x-on-night)}
+.x-lead{color:var(--x-ink-2);font-size:clamp(1.02rem,.97rem + .3vw,1.18rem);line-height:1.6}
+.x-night .x-lead,.x-hero .x-lead{color:var(--x-on-night-2)}
+.x-h2{font-size:clamp(2.1rem,1.2rem + 3.6vw,4.1rem)}
+.x-h2 i,.x-h1 i{font-style:italic}
+
+/* Boutons */
+.x-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.6rem;border-radius:999px;font:600 1rem/1.2 var(--x-sans);border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:background .35s var(--x-ease),color .35s var(--x-ease),transform .35s var(--x-ease),box-shadow .35s var(--x-ease),border-color .35s}
+.x-btn:active{transform:scale(.98)}
+.x-btn-rose{background:var(--x-rose);color:#fff;box-shadow:0 14px 30px -14px rgba(184,66,109,.75)}
+.x-btn-rose:hover{background:var(--x-rose-2);transform:translateY(-2px);box-shadow:0 20px 36px -16px rgba(184,66,109,.8)}
+.x-btn-blush{background:var(--x-blush);color:var(--x-night)}
+.x-btn-blush:hover{background:#F3CAD6;transform:translateY(-2px)}
+.x-btn-line{background:transparent;color:inherit;border-color:currentColor}
+.x-btn-line:hover{background:rgba(127,90,110,.08)}
+.x-night .x-btn-line,.x-hero .x-btn-line{border-color:rgba(246,236,239,.35)}
+.x-night .x-btn-line:hover,.x-hero .x-btn-line:hover{background:rgba(246,236,239,.08);border-color:rgba(246,236,239,.6)}
+.x-btn .x-play{width:30px;height:30px;margin-left:-.55rem;border-radius:50%;display:grid;place-items:center;background:var(--x-blush);color:var(--x-night)}
+.x-btn .x-play svg{width:12px;height:12px;margin-left:2px}
+
+/* Barre de progression */
+.x-progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:70;background:var(--x-blush);transform-origin:0 50%;transform:scaleX(var(--x-sp,0));pointer-events:none}
+
+/* En-tête */
+.x-header{position:fixed;inset:0 0 auto 0;z-index:60;padding-top:env(safe-area-inset-top,0px);color:var(--x-on-night);transition:background .5s var(--x-ease),color .5s var(--x-ease),box-shadow .5s,transform .5s var(--x-ease)}
+.x-header.is-solid{background:rgba(246,240,242,.82);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);color:var(--x-ink);box-shadow:0 1px 0 var(--x-line)}
+.x-header.is-hidden{transform:translateY(-100%)}
+.x-header.is-dim:not(.is-solid){background:rgba(29,19,34,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.x-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
+.x-logo{display:inline-flex;align-items:baseline;gap:.1rem;font:500 1.55rem/1 var(--x-serif);letter-spacing:-0.02em;white-space:nowrap}
+.x-logo i{font-style:italic}
+.x-logo .x-dot{width:6px;height:6px;border-radius:50%;background:var(--x-blush);margin-left:.2rem;align-self:center}
+.x-header.is-solid .x-logo .x-dot{background:var(--x-rose)}
+.x-links{display:none;gap:2rem;font-size:.95rem}
+.x-links a{position:relative;padding:.4rem 0;opacity:.85;transition:opacity .3s}
+.x-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--x-ease)}
+.x-links a:hover{opacity:1}.x-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.x-actions{display:none;align-items:center;gap:1.25rem}
+.x-actions .x-login{font-size:.95rem;opacity:.85}.x-actions .x-login:hover{opacity:1;text-decoration:underline}
+.x-actions .x-btn{min-height:44px;padding:.65rem 1.25rem;font-size:.95rem}
+.x-header:not(.is-solid) .x-actions .x-btn-rose{background:var(--x-blush);color:var(--x-night);box-shadow:none}
+.x-burger{width:46px;height:46px;border:1px solid currentColor;border-radius:50%;background:transparent;color:inherit;display:grid;place-content:center;gap:5px;cursor:pointer;opacity:.9}
+.x-burger i{display:block;width:18px;height:1.5px;background:currentColor;transition:transform .4s var(--x-ease),opacity .3s}
+.x-burger[aria-expanded="true"] i:nth-child(1){transform:translateY(3.25px) rotate(45deg)}
+.x-burger[aria-expanded="true"] i:nth-child(2){transform:translateY(-3.25px) rotate(-45deg)}
+.x-menu{position:fixed;inset:0;z-index:55;background:var(--x-night);color:var(--x-on-night);padding:calc(96px + env(safe-area-inset-top,0px)) var(--x-pad) 2rem;display:flex;flex-direction:column;gap:.25rem;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--x-ease),visibility 0s .7s}
+.x-menu.open{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .7s var(--x-ease),visibility 0s}
+.x-menu a:not(.x-btn){font:500 clamp(2rem,9vw,2.8rem)/1.2 var(--x-serif);padding:.35rem 0;border-bottom:1px solid var(--x-line-night)}
+.x-menu .x-btn{margin-top:1.5rem}
+body.x-menu-open .x-header{color:var(--x-on-night);background:transparent;box-shadow:none;backdrop-filter:none}
+@media(min-width:1000px){.x-links,.x-actions{display:flex}.x-burger,.x-menu{display:none}}
+
+/* ---------- Héros ---------- */
+.x-hero{position:relative;min-height:100svh;background:var(--x-night);color:var(--x-on-night);overflow:hidden;display:grid;align-items:center;padding:calc(110px + env(safe-area-inset-top,0px)) 0 clamp(3rem,7vw,5rem)!important}
+.x-hero-glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;left:55%;top:-10%;background:radial-gradient(closest-side,rgba(235,185,199,.22),rgba(184,66,109,.08) 55%,transparent 75%);transform:translate3d(var(--x-gx,0),var(--x-gy,0),0);pointer-events:none}
+.x-hero-grid{position:relative;display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+.x-hero-copy{display:grid;gap:1.6rem;will-change:transform,opacity}
+.x-h1{font-size:clamp(2.6rem,1.1rem + 5vw,5.4rem);line-height:.98;letter-spacing:-0.03em}
+.x-h1 .x-ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.x-h1 .x-ln>span{display:block}
+.x-h1 .x-ln.x-soft>span{color:var(--x-blush)}
+.x-hero .x-lead{max-width:50ch}
+.x-hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+.x-proof{display:flex;align-items:center;gap:.9rem;font-size:.92rem;color:var(--x-on-night-2)}
+.x-avatars{display:flex}
+.x-avatars span{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:700;color:var(--x-night);border:2px solid var(--x-night);margin-left:-9px;background:var(--x-blush)}
+.x-avatars span:first-child{margin-left:0}
+.x-avatars span:nth-child(2){background:var(--x-champagne)}
+.x-avatars span:nth-child(3){background:#CDB6E6}
+.x-avatars span:nth-child(4){background:var(--x-plum);color:var(--x-on-night)}
+.x-hero-visual{position:relative;justify-self:center;width:min(100%,470px)}
+.x-arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px var(--x-r) var(--x-r);overflow:hidden;background:var(--x-plum);box-shadow:0 50px 100px -40px rgba(0,0,0,.7)}
+.x-arch img{position:absolute;inset:-12% 0;width:100%;height:124%;object-fit:cover;transform:translate3d(0,var(--x-py,0),0) scale(1.04);will-change:transform}
+.x-arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(29,19,34,.45));pointer-events:none}
+.x-ring{position:absolute;inset:-18px;border-radius:999px 999px 26px 26px;border:1px solid rgba(217,194,160,.45);pointer-events:none;transform:translate3d(0,var(--x-py2,0),0)}
+.x-copilot{position:absolute;left:-12%;bottom:8%;width:min(78%,320px);background:rgba(255,251,252,.96);color:var(--x-ink);border-radius:var(--x-r);padding:1rem 1rem .6rem;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);transform:translate3d(0,var(--x-py3,0),0);will-change:transform}
+.x-copilot-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;padding-bottom:.65rem;border-bottom:1px solid var(--x-line)}
+.x-copilot-head small{display:block;font-size:.75rem;color:var(--x-ink-3)}
+.x-copilot-head b{font:500 2rem/1 var(--x-serif)}
+.x-copilot-head b span{font:500 .8rem var(--x-sans);color:var(--x-ink-2);margin-left:.35rem}
+.x-time{white-space:nowrap;font-size:.72rem;font-weight:600;padding:.3rem .6rem;border-radius:999px;background:var(--x-blush-2);color:var(--x-rose-2);display:inline-flex;gap:.3rem;align-items:center}
+.x-time svg{width:12px;height:12px}
+.x-opp{display:grid;grid-template-columns:auto 1fr auto;gap:.65rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--x-line)}
+.x-opp:last-child{border-bottom:0}
+.x-opp .x-av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.62rem;font-weight:700;background:var(--x-porcelain-2);color:var(--x-plum)}
+.x-opp b{display:block;font-size:.82rem;font-weight:600}
+.x-opp span.x-why{display:block;font-size:.72rem;color:var(--x-ink-2)}
+.x-opp .x-val{font-weight:700;font-size:.8rem;color:var(--x-rose-2);font-variant-numeric:tabular-nums}
+.x-scrollcue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);width:1px;height:46px;background:linear-gradient(var(--x-on-night-3),transparent);overflow:hidden}
+.x-scrollcue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--x-blush);animation:x-cue 2.2s var(--x-ease) infinite}
+@keyframes x-cue{to{top:110%}}
+@media(min-width:960px){.x-hero-grid{grid-template-columns:1.15fr .85fr}.x-hero-visual{justify-self:end}}
+@media(max-width:959px){.x-copilot{left:auto;right:-6%;bottom:-9%;width:min(74%,280px);padding:.8rem .85rem .4rem}.x-copilot .x-opp:nth-child(n+4){display:none}.x-hero-visual{width:min(84%,400px);margin-bottom:3rem}.x-scrollcue{display:none}}
+
+/* Séquence d'ouverture (unique moment orchestré) */
+.x-js .x-h1 .x-ln>span{transform:translateY(105%)}
+.x-js .x-hero-copy .x-fade{opacity:0;transform:translateY(14px)}
+.x-js .x-arch{clip-path:inset(100% 0 0 0 round 999px 999px 14px 14px)}
+.x-js .x-copilot{opacity:0}
+.x-js .x-ring{opacity:0}
+.x-loaded .x-h1 .x-ln>span{transform:none;transition:transform 1.2s var(--x-ease)}
+.x-loaded .x-h1 .x-ln:nth-child(2)>span{transition-delay:.12s}
+.x-loaded .x-hero-copy .x-fade{opacity:1;transform:none;transition:opacity 1s var(--x-ease) .45s,transform 1s var(--x-ease) .45s}
+.x-loaded .x-hero-copy .x-fade+.x-fade{transition-delay:.58s}
+.x-loaded .x-hero-copy .x-fade+.x-fade+.x-fade{transition-delay:.7s}
+.x-loaded .x-arch{clip-path:inset(0 0 0 0 round 999px 999px 14px 14px);transition:clip-path 1.5s var(--x-ease) .15s}
+.x-loaded .x-copilot{opacity:1;transition:opacity 1s var(--x-ease) 1s}
+.x-loaded .x-ring{opacity:1;transition:opacity 1.4s ease .9s}
+
+/* ---------- Bandeau défilant ---------- */
+.x-marquee{background:var(--x-night);color:var(--x-on-night);border-top:1px solid var(--x-line-night);overflow:hidden;padding:clamp(1.4rem,3vw,2.2rem) 0}
+.x-marquee-track{display:flex;width:max-content;transform:translate3d(var(--x-mx,0),0,0);will-change:transform}
+.x-marquee-group{display:flex;align-items:center;gap:clamp(2rem,4vw,3.5rem);padding-right:clamp(2rem,4vw,3.5rem)}
+.x-fact{display:flex;align-items:baseline;gap:.8rem;white-space:nowrap}
+.x-fact b{font:500 clamp(2rem,1.2rem + 2.6vw,3.4rem)/1 var(--x-serif);color:var(--x-blush);font-variant-numeric:lining-nums}
+.x-fact span{font-size:clamp(.92rem,.9rem + .2vw,1.05rem);color:var(--x-on-night-2)}
+.x-star{width:18px;height:18px;color:var(--x-champagne);flex:none}
+
+/* ---------- Problème ---------- */
+.x-problem{padding:clamp(5rem,11vw,9.5rem) 0!important;background:var(--x-porcelain)}
+.x-fill{font:500 clamp(1.9rem,1.1rem + 3.4vw,3.9rem)/1.12 var(--x-serif);letter-spacing:-0.02em;max-width:22ch;text-wrap:balance}
+.x-fill .w{opacity:var(--o,1);transition:opacity .2s linear}
+.x-js .x-fill .w{--o:.16}
+.x-problem-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);margin-top:clamp(3rem,7vw,5.5rem);align-items:center}
+.x-problem-photo{position:relative;border-radius:var(--x-r);overflow:hidden;aspect-ratio:4/5;background:var(--x-porcelain-2)}
+.x-problem-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--x-zs,1.18));will-change:transform}
+.x-note{position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;gap:.8rem;align-items:center;background:rgba(255,251,252,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:12px;padding:.85rem 1rem;box-shadow:0 18px 36px -20px rgba(34,23,42,.5);transform:translate3d(0,var(--x-py,0),0)}
+.x-note .x-ic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--x-blush-2);color:var(--x-rose-2);display:grid;place-items:center}
+.x-note b{display:block;font-size:.9rem}.x-note span{font-size:.8rem;color:var(--x-ink-2)}
+.x-problem-copy{display:grid;gap:2rem}
+.x-plist{display:grid;border-top:1px solid var(--x-line)}
+.x-plist li{display:grid;grid-template-columns:44px 1fr;gap:1.1rem;padding:1.35rem 0;border-bottom:1px solid var(--x-line);align-items:start}
+.x-plist .x-ic{width:44px;height:44px;border-radius:50%;border:1px solid var(--x-line);display:grid;place-items:center;color:var(--x-rose)}
+.x-plist strong{display:block;font-weight:600;margin-bottom:.15rem}
+.x-plist p{color:var(--x-ink-2);font-size:.97rem}
+.x-ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:900px){.x-problem-grid{grid-template-columns:.9fr 1.1fr}}
+
+/* ---------- Étapes : scrollytelling épinglé ---------- */
+.x-steps{position:relative}
+.x-steps-head{padding:clamp(5rem,10vw,8rem) 0 clamp(2rem,4vw,3rem)}
+.x-steps-head .x-wrap{display:grid;gap:1.25rem}
+.x-steps-head .x-lead{max-width:56ch}
+.x-pin{position:relative}
+.x-stage{display:grid;gap:3.5rem;padding-bottom:clamp(4rem,8vw,6rem)}
+.x-step{display:grid;gap:1rem}
+.x-step-top{display:flex;align-items:center;gap:1rem}
+.x-step-n{font:italic 500 clamp(2.6rem,2rem + 2vw,3.6rem)/1 var(--x-serif);color:var(--x-blush);font-variant-numeric:lining-nums}
+.x-step-time{display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--x-line-night);color:var(--x-on-night-2)}
+.x-step-time svg{width:13px;height:13px}
+.x-step h3{font:500 clamp(1.6rem,1.2rem + 1.4vw,2.3rem)/1.1 var(--x-serif)!important;letter-spacing:-0.02em!important}
+.x-step p{color:var(--x-on-night-2)}
+.x-screen{position:relative}
+.x-screen .shot{font-size:.82rem;border:1px solid rgba(246,236,239,.25);box-shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+.x-total{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;padding:1.6rem 0;border-top:1px solid var(--x-line-night);margin-top:1rem}
+.x-total b{font:500 clamp(1.8rem,1.4rem + 1.5vw,2.6rem)/1 var(--x-serif);color:var(--x-blush);display:block;margin-bottom:.35rem}
+.x-total span{color:var(--x-on-night-2);font-size:.95rem}
+.x-total>div:last-child{text-align:right}
+.x-steps-rail{display:none}
+@media(min-width:1000px){
+  .x-steps.is-pinned .x-pin{height:calc(var(--x-n,4) * 85vh + 100vh)}
+  .x-steps.is-pinned .x-stage{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:72px 1fr 1.05fr;gap:clamp(2rem,4vw,4rem);align-items:center;padding:76px 0 0}
+  .x-steps.is-pinned .x-steps-rail{display:grid;align-self:center;justify-items:center;gap:.9rem}
+  .x-steps-rail button{width:40px;height:40px;border-radius:50%;border:1px solid var(--x-line-night);background:transparent;color:var(--x-on-night-3);font:italic 500 1.05rem/1 var(--x-serif);cursor:pointer;transition:all .5s var(--x-ease)}
+  .x-steps-rail button.on{background:var(--x-blush);color:var(--x-night);border-color:var(--x-blush)}
+  .x-steps.is-pinned .x-steps-rail{position:relative;gap:2.6rem}
+  .x-steps-rail button{position:relative;z-index:1;background:var(--x-night)!important}
+  .x-steps-rail button.on{background:var(--x-blush)!important}
+  .x-steps-rail .x-rail{position:absolute;left:50%;top:20px;bottom:20px;width:1px;background:var(--x-line-night);overflow:hidden}
+  .x-steps-rail .x-rail i{position:absolute;inset:0;background:var(--x-blush);transform-origin:top;transform:scaleY(var(--x-sp2,0))}
+  .x-steps.is-pinned .x-texts,.x-steps.is-pinned .x-screens{position:relative;height:min(560px,70vh)}
+  .x-steps.is-pinned .x-step{position:absolute;inset:0;align-content:center;opacity:0;transform:translateY(40px);transition:opacity .7s var(--x-ease),transform .9s var(--x-ease);pointer-events:none}
+  .x-steps.is-pinned .x-step.on{opacity:1;transform:none;pointer-events:auto}
+  .x-steps.is-pinned .x-step .x-screen{display:none}
+  .x-steps.is-pinned .x-screens{display:block}
+  .x-steps.is-pinned .x-screens .shot{zoom:1.32}
+  .x-steps.is-pinned .x-texts,.x-steps.is-pinned .x-screens{height:min(640px,76vh)}
+  .x-steps.is-pinned .x-screens .x-screen{position:absolute;inset:0;display:grid;align-content:center;opacity:0;transform:translateY(60px) scale(.94) rotate(1.5deg);filter:blur(6px);transition:opacity .8s var(--x-ease),transform 1s var(--x-ease),filter .8s var(--x-ease)}
+  .x-steps.is-pinned .x-screens .x-screen.on{opacity:1;transform:none;filter:none}
+  .x-steps.is-pinned .x-screens .x-screen.past{transform:translateY(-60px) scale(.94) rotate(-1.5deg)}
+  .x-steps.is-pinned .x-total-wrap{position:absolute;left:0;right:0;bottom:2rem}
+}
+.x-screens{display:none}
+
+/* ---------- Leviers : défilement horizontal ---------- */
+.x-levers{background:var(--x-porcelain);position:relative}
+.x-levers-head{padding:clamp(5rem,10vw,8rem) 0 clamp(2rem,4vw,3rem)}
+.x-levers-head .x-wrap{display:grid;gap:1.25rem}
+.x-hpin{position:relative}
+.x-hstage{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:clamp(4rem,8vw,6rem)}
+.x-hstage::-webkit-scrollbar{display:none}
+.x-htrack{display:flex;gap:1rem;padding-inline:var(--x-pad);width:max-content;will-change:transform}
+.x-lever{position:relative;flex:0 0 min(84vw,400px);min-height:480px;border-radius:var(--x-r);padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;gap:1rem;scroll-snap-align:center;overflow:hidden;background:var(--x-paper);box-shadow:0 30px 60px -40px rgba(34,23,42,.45)}
+.x-lever .x-ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--x-blush-2);color:var(--x-rose-2)}
+.x-lever .x-ic svg{width:22px;height:22px}
+.x-lever:not(.is-dark):not(.is-photo) h3{margin-top:auto}
+.x-lever h3{font:500 clamp(1.7rem,1.3rem + 1.3vw,2.5rem)/1.08 var(--x-serif)!important;letter-spacing:-0.02em!important}
+.x-lever p{color:var(--x-ink-2);font-size:.98rem}
+.x-lever .x-plan{align-self:flex-start;font-size:.75rem;font-weight:600;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--x-line);color:var(--x-ink-2)}
+.x-lever .x-lever-n{margin-top:auto;font:italic 500 4.5rem/.8 var(--x-serif);color:var(--x-porcelain-2);align-self:flex-end}
+.x-lever.is-dark{background:var(--x-night);color:var(--x-on-night);flex-basis:min(90vw,680px)}
+.x-lever.is-dark p{color:var(--x-on-night-2)}
+.x-lever.is-dark .x-ic{background:rgba(235,185,199,.15);color:var(--x-blush)}
+.x-lever.is-dark .x-plan{border-color:var(--x-line-night);color:var(--x-on-night-2)}
+.x-lever.is-dark .shot{margin-top:auto;border:1px solid rgba(246,236,239,.2)}
+.x-lever.is-photo{padding:0;flex-basis:min(88vw,560px);color:#fff;justify-content:flex-end}
+.x-lever.is-photo .x-lever-img{position:absolute;inset:0;overflow:hidden}
+.x-lever.is-photo img{width:120%;max-width:none;height:100%;object-fit:cover;transform:translate3d(var(--x-px,0),0,0);margin-left:-10%}
+.x-lever.is-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(29,19,34,.88))}
+.x-lever.is-photo .x-lever-body{position:relative;z-index:1;padding:clamp(1.5rem,3vw,2.2rem);display:grid;gap:.9rem}
+.x-lever.is-photo p{color:rgba(255,255,255,.85)}
+.x-lever.is-photo .x-plan{border-color:rgba(255,255,255,.4);color:#fff}
+.x-lever.is-photo .x-ic{background:rgba(255,255,255,.16);color:#fff}
+.x-lever.is-champagne{background:#EFE3D3}
+.x-lever.is-champagne .x-ic{background:rgba(255,255,255,.6);color:#7A5A2E}
+.x-lever.is-champagne .x-lever-n{color:rgba(122,90,46,.18)}
+.x-lever.is-blush{background:var(--x-blush-2)}
+.x-lever.is-blush .x-ic{background:rgba(255,255,255,.6)}
+.x-lever.is-blush .x-lever-n{color:rgba(184,66,109,.16)}
+.x-hhint{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--x-ink-3);margin-top:.5rem}
+.x-hhint .x-bar{flex:0 0 120px;height:1px;background:var(--x-line);position:relative;overflow:hidden}
+.x-hhint .x-bar i{position:absolute;inset:0;background:var(--x-rose);transform-origin:left;transform:scaleX(var(--x-hp,.2))}
+@media(min-width:1000px){
+  .x-levers.is-pinned .x-hpin{height:var(--x-hh,300vh)}
+  .x-levers.is-pinned .x-hstage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;padding:76px 0 0}
+  .x-levers.is-pinned .x-htrack{padding-inline:max(var(--x-pad),calc((100vw - var(--x-max))/2));gap:1.5rem;transform:translate3d(var(--x-hx,0),0,0)}
+  .x-levers.is-pinned .x-lever{min-height:min(560px,72vh)}
+}
+
+/* ---------- Résultats ---------- */
+.x-results{padding:clamp(5rem,10vw,8.5rem) 0!important;background:var(--x-porcelain-2);overflow:hidden;perspective:1400px}
+.x-results-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.x-panel{background:var(--x-night);color:var(--x-on-night);border-radius:20px;padding:clamp(1.4rem,3vw,2.2rem);box-shadow:0 60px 100px -50px rgba(29,19,34,.8);transform:rotateX(var(--x-tilt,0deg)) translateY(var(--x-ty,0));transform-origin:50% 100%;will-change:transform}
+.x-panel-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.88rem;color:var(--x-on-night-2);padding-bottom:1.1rem;border-bottom:1px solid var(--x-line-night)}
+.x-panel-top span:last-child{white-space:nowrap;font-size:.78rem;padding:.25rem .7rem;border-radius:999px;background:rgba(235,185,199,.14);color:var(--x-blush)}
+.x-big{padding:1.6rem 0 1.4rem}
+.x-big small{display:block;font-size:.9rem;color:var(--x-on-night-2)}
+.x-big .x-num{font:500 clamp(3.4rem,2rem + 6vw,6rem)/1 var(--x-serif);letter-spacing:-0.03em;color:var(--x-blush);font-variant-numeric:lining-nums tabular-nums;margin:.35rem 0 .5rem}
+.x-big .x-delta{font-size:.9rem;color:var(--x-champagne)}
+.x-kgrid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--x-line-night)}
+.x-k{padding:1.1rem 0 1.1rem;border-bottom:1px solid var(--x-line-night)}
+.x-k:nth-child(odd){padding-right:1rem;border-right:1px solid var(--x-line-night)}
+.x-k:nth-child(even){padding-left:1rem}
+.x-k:nth-last-child(-n+2){border-bottom:0}
+.x-k .x-n{font:500 clamp(1.6rem,1.3rem + 1vw,2.2rem)/1.1 var(--x-serif);font-variant-numeric:lining-nums tabular-nums}
+.x-k .x-l{font-size:.82rem;color:var(--x-on-night-2)}
+.x-k .x-meter{height:2px;background:var(--x-line-night);margin-top:.8rem;overflow:hidden}
+.x-k .x-meter i{display:block;height:100%;width:0;background:var(--x-blush);transition:width 1.6s var(--x-ease)}
+.x-results-copy{display:grid;gap:1.5rem}
+.x-checks{display:grid;gap:.9rem}
+.x-checks li{display:grid;grid-template-columns:26px 1fr;gap:.8rem;color:var(--x-ink-2)}
+.x-checks svg{width:26px;height:26px;padding:6px;border-radius:50%;background:var(--x-night);color:var(--x-blush);stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:960px){.x-results-grid{grid-template-columns:1.05fr .95fr}}
+
+/* ---------- Tarifs ---------- */
+.x-pricing{padding:clamp(5rem,10vw,8.5rem) 0!important;background:var(--x-porcelain)}
+.x-pricing-head{display:grid;gap:1.2rem;justify-items:center;text-align:center;margin-bottom:clamp(3rem,6vw,4.5rem)}
+.x-pricing-head .x-lead{margin-inline:auto}
+.x-promo{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;padding:.5rem 1rem;border-radius:999px;background:var(--x-blush-2);color:var(--x-rose-2)}
+.x-promo svg{width:16px;height:16px}
+.x-plans{display:grid;gap:1.25rem;max-width:980px;margin-inline:auto;align-items:stretch}
+.x-planc{position:relative;display:flex;flex-direction:column;gap:1.3rem;padding:clamp(1.6rem,3.5vw,2.6rem);border-radius:20px;background:var(--x-paper);box-shadow:0 30px 60px -45px rgba(34,23,42,.45)}
+.x-planc .x-pname{font:500 2rem/1 var(--x-serif)}
+.x-planc .x-pdesc{color:var(--x-ink-2);font-size:.97rem;margin-top:.4rem}
+.x-price{display:flex;align-items:baseline;gap:.4rem}
+.x-price b{font:500 clamp(3rem,2.4rem + 2vw,3.8rem)/1 var(--x-serif);letter-spacing:-0.03em;font-variant-numeric:lining-nums}
+.x-price small{color:var(--x-ink-2)}
+.x-pnote{font-size:.88rem;color:var(--x-rose-2);margin-top:-.6rem}
+.x-feats{display:grid;gap:.7rem;padding-top:1.3rem;border-top:1px solid var(--x-line)}
+.x-feats li{display:grid;grid-template-columns:20px 1fr;gap:.7rem;font-size:.95rem;align-items:start}
+.x-feats svg{width:20px;height:20px;margin-top:.15rem;stroke:var(--x-rose);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.x-feats li.off{color:var(--x-ink-3)}.x-feats li.off svg{stroke:var(--x-ink-3)}
+.x-roi{font-size:.9rem;padding:.9rem 1rem;border-radius:12px;background:var(--x-porcelain);color:var(--x-ink-2);margin-top:auto}
+.x-roi b{color:var(--x-ink)}
+.x-planc .x-btn{width:100%}
+.x-planc.is-featured{background:var(--x-night);color:var(--x-on-night);box-shadow:0 50px 90px -40px rgba(29,19,34,.85)}
+.x-planc.is-featured .x-pdesc,.x-planc.is-featured .x-price small{color:var(--x-on-night-2)}
+.x-planc.is-featured .x-price b{color:var(--x-blush)}
+.x-planc.is-featured .x-pnote{color:var(--x-champagne)}
+.x-planc.is-featured .x-feats{border-color:var(--x-line-night)}
+.x-planc.is-featured .x-feats svg{stroke:var(--x-blush)}
+.x-planc.is-featured .x-roi{background:rgba(246,236,239,.07);color:var(--x-on-night-2)}
+.x-planc.is-featured .x-roi b{color:var(--x-on-night)}
+.x-badge{position:absolute;top:-14px;left:clamp(1.6rem,3.5vw,2.6rem);font-size:.78rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;background:var(--x-blush);color:var(--x-night)}
+.x-pfine{text-align:center;font-size:.88rem;color:var(--x-ink-3);margin:2rem auto 0;max-width:none!important}
+@media(min-width:820px){.x-plans{grid-template-columns:1fr 1fr}.x-planc.is-featured{transform:translateY(-14px)}}
+
+/* ---------- Appel final ---------- */
+.x-final{position:relative;background:linear-gradient(var(--x-porcelain) 50%,var(--x-night) 50%);padding:0!important}
+.x-final-box{position:relative;min-height:min(86vh,760px);display:grid;align-items:end;overflow:hidden;color:#fff;clip-path:inset(var(--x-ci,6%) var(--x-ci,6%) var(--x-ci,6%) var(--x-ci,6%) round var(--x-cr,28px));will-change:clip-path}
+.x-final-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--x-cz,1.2));will-change:transform}
+.x-final-box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,19,34,.15) 0%,rgba(29,19,34,.55) 45%,rgba(29,19,34,.92) 100%)}
+.x-final-in{position:relative;z-index:1;padding:clamp(2rem,6vw,5rem) 0;display:grid;gap:1.4rem}
+.x-final-in h2{font-size:clamp(2.4rem,1.3rem + 4.4vw,5.2rem);max-width:14ch}
+.x-final-in p{color:rgba(255,255,255,.86);font-size:clamp(1.02rem,.97rem + .3vw,1.2rem)}
+
+/* ---------- Pied de page ---------- */
+.x-footer{background:var(--x-night);color:var(--x-on-night-2);padding:clamp(4rem,8vw,6rem) 0 2rem}
+.x-footer-grid{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr}
+.x-footer .x-logo{color:var(--x-on-night);font-size:2.2rem}
+.x-footer-brand{grid-column:1/-1;display:grid;gap:1rem}
+.x-footer-brand p{max-width:40ch;font-size:.95rem}
+.x-fcol{display:grid;gap:.6rem;align-content:start;font-size:.95rem}
+.x-fcol strong{color:var(--x-on-night);font-weight:600;margin-bottom:.3rem}
+.x-fcol a,.x-fcol button{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:inherit;font:inherit;transition:color .3s}
+.x-fcol a:hover,.x-fcol button:hover{color:var(--x-blush)}
+.x-footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-top:clamp(3rem,6vw,4.5rem);padding-top:1.5rem;border-top:1px solid var(--x-line-night);font-size:.82rem;color:var(--x-on-night-3)}
+.x-giant{font:italic 500 clamp(3.4rem,13.5vw,12.5rem)/.85 var(--x-serif);letter-spacing:-0.04em;color:rgba(246,236,239,.06);margin-top:clamp(2rem,5vw,4rem);white-space:nowrap;overflow:hidden;user-select:none;transform:translate3d(var(--x-gx2,0),0,0)}
+@media(min-width:900px){.x-footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}.x-footer-brand{grid-column:auto}}
+
+/* Apparitions douces (contenu visible par défaut sans JS) */
+.x-js .x-rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--x-ease),transform 1.1s var(--x-ease)}
+.x-js .x-rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  #view-site *,#view-site *::before,#view-site *::after{animation:none!important;transition-duration:.01ms!important}
+  .x-arch img,.x-copilot,.x-ring,.x-note,.x-panel,.x-final-box img,.x-problem-photo img,.x-lever.is-photo img,.x-giant{transform:none!important}
+  .x-final-box{clip-path:none!important}
+}
+.x-texts{display:grid;gap:4rem}
+@media(min-width:1000px){.x-steps:not(.is-pinned) .x-texts{grid-template-columns:1fr 1fr;gap:4rem 3rem}}
 </style>
 </head>
 <body>
 
 <!-- ===================== SITE VITRINE ===================== -->
 <div id="view-site">
-<header class="site-header">
-  <div class="wrap">
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#" class="logo"><span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-6 4 4 7-9"/><path d="M15 6h5v5"/></svg></span>BeautyRevenue</a>
-      <ul class="nav-links"><li><a href="#fonctionnement">Comment ça marche</a></li><li><a href="#leviers">Leviers</a></li><li><a href="#resultats">Résultats</a></li><li><a href="#tarifs">Tarifs</a></li></ul>
-      <div class="nav-actions"><a href="#/connexion" class="btn btn-ghost">Se connecter</a><button type="button" class="btn btn-primary" data-contact="analyse">Mon analyse gratuite</button></div>
-      <button class="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu"><i></i><i></i><i></i></button>
+<div class="x-progress" aria-hidden="true"></div>
+<header class="x-header">
+  <div class="x-wrap">
+    <nav class="x-nav" aria-label="Navigation principale">
+      <a href="#" class="x-logo" aria-label="BeautyRevenue, accueil">Beauty<i>Revenue</i><span class="x-dot" aria-hidden="true"></span></a>
+      <div class="x-links"><a href="#fonctionnement">Comment ça marche</a><a href="#leviers">Leviers</a><a href="#resultats">Résultats</a><a href="#tarifs">Tarifs</a></div>
+      <div class="x-actions"><a href="#/connexion" class="x-login">Se connecter</a><button type="button" class="x-btn x-btn-rose" data-contact="analyse">Mon analyse gratuite</button></div>
+      <button class="x-burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu"><i></i><i></i></button>
     </nav>
-    <div class="mobile-menu" id="mobileMenu"><a href="#fonctionnement">Comment ça marche</a><a href="#leviers">Leviers</a><a href="#resultats">Résultats</a><a href="#tarifs">Tarifs</a><a href="#/connexion">Se connecter</a><button type="button" class="btn btn-primary" data-contact="analyse">Mon analyse gratuite</button></div>
   </div>
 </header>
+<div class="x-menu" id="mobileMenu"><a href="#fonctionnement">Comment ça marche</a><a href="#leviers">Leviers</a><a href="#resultats">Résultats</a><a href="#tarifs">Tarifs</a><a href="#/connexion">Se connecter</a><button type="button" class="x-btn x-btn-blush" data-contact="analyse">Mon analyse gratuite</button></div>
+
 <main>
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1>5 minutes par mois. <span class="grad-text">Un bonus de chiffre d'affaires chaque mois.</span></h1>
-      <p class="lead">Déposez l'export de votre logiciel une fois par mois. BeautyRevenue repère les clientes à faire revenir, les cures à proposer, les produits à vendre, et vous prépare les messages. La première cliente qui réserve rembourse l'abonnement.</p>
-      <div class="hero-actions"><button type="button" class="btn btn-primary" data-contact="analyse">Demander mon analyse gratuite</button><button type="button" class="btn btn-play" data-open-pres><span class="pl"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>Voir la présentation · 50 s</button></div>
-      <div class="hero-proof"><div class="avatars" aria-hidden="true"><span>LR</span><span>ML</span><span>AB</span><span>+</span></div><span>Utilisé par des instituts indépendants à Paris, Lyon et Bordeaux</span></div>
+<!-- ============ HÉROS ============ -->
+<section class="x-hero" aria-labelledby="heroTitle">
+  <div class="x-hero-glow" aria-hidden="true"></div>
+  <div class="x-wrap x-hero-grid">
+    <div class="x-hero-copy">
+      <h1 class="x-h1" id="heroTitle"><span class="x-ln"><span>5 minutes par mois.</span></span><span class="x-ln x-soft"><span><i>Un bonus de chiffre d'affaires chaque mois.</i></span></span></h1>
+      <p class="x-lead x-fade">Déposez l'export de votre logiciel une fois par mois. BeautyRevenue repère les clientes à faire revenir, les cures à proposer, les produits à vendre, et vous prépare les messages. La première cliente qui réserve rembourse l'abonnement.</p>
+      <div class="x-hero-actions x-fade"><button type="button" class="x-btn x-btn-blush" data-contact="analyse">Demander mon analyse gratuite</button><button type="button" class="x-btn x-btn-line" data-open-pres><span class="x-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>Voir la présentation (50 s)</button></div>
+      <div class="x-proof x-fade"><div class="x-avatars" aria-hidden="true"><span>LR</span><span>ML</span><span>AB</span><span>+</span></div><span>Utilisé par des instituts indépendants à Paris, Lyon et Bordeaux</span></div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-photo"><img src="https://images.unsplash.com/photo-1761718209835-c8586b7dcac0?auto=format&fit=crop&w=1000&q=80" alt="Soin du visage en institut" width="800" height="1000" fetchpriority="high"></div>
-      <div class="copilot" aria-label="Aperçu de l'application">
-        <div class="copilot-head"><div><div class="date">Votre mois d'octobre</div><div class="count">18<small>opportunités</small></div></div><span class="timebadge">⏱ 5 min</span></div>
-        <ul class="copilot-list">
-          <li class="opp"><span class="avatar a1">EM</span><div><div class="who">Emma M.</div><div class="why">Absente depuis 8 semaines</div></div><span class="val">+65 €</span></li>
-          <li class="opp"><span class="avatar a2">SL</span><div><div class="who">Sophie L.</div><div class="why">Cure épilation à proposer</div></div><span class="val">+290 €</span></li>
-          <li class="opp"><span class="avatar a3">CB</span><div><div class="who">Camille B.</div><div class="why">Routine produits à envoyer</div></div><span class="val">+84 €</span></li>
-          <li class="opp"><span class="avatar a4">NR</span><div><div class="who">Nadia R.</div><div class="why">Éligible au parrainage</div></div><span class="val">+120 €</span></li>
+    <div class="x-hero-visual">
+      <div class="x-ring" aria-hidden="true"></div>
+      <div class="x-arch"><img src="https://images.unsplash.com/photo-1761718209835-c8586b7dcac0?auto=format&fit=crop&w=1000&q=80" alt="Soin du visage en institut" width="800" height="1000" fetchpriority="high"></div>
+      <div class="x-copilot" aria-label="Aperçu de l'application">
+        <div class="x-copilot-head"><div><small>Votre mois d'octobre</small><b>18<span>opportunités</span></b></div><span class="x-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>5 min</span></div>
+        <ul>
+          <li class="x-opp"><span class="x-av">EM</span><div><b>Emma M.</b><span class="x-why">Absente depuis 8 semaines</span></div><span class="x-val">+65 €</span></li>
+          <li class="x-opp"><span class="x-av">SL</span><div><b>Sophie L.</b><span class="x-why">Cure épilation à proposer</span></div><span class="x-val">+290 €</span></li>
+          <li class="x-opp"><span class="x-av">CB</span><div><b>Camille B.</b><span class="x-why">Routine produits à envoyer</span></div><span class="x-val">+84 €</span></li>
+          <li class="x-opp"><span class="x-av">NR</span><div><b>Nadia R.</b><span class="x-why">Éligible au parrainage</span></div><span class="x-val">+120 €</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="x-scrollcue" aria-hidden="true"></div>
+</section>
+
+<!-- ============ BANDEAU ============ -->
+<div class="x-marquee" aria-label="BeautyRevenue en chiffres">
+  <div class="x-marquee-track">
+    <div class="x-marquee-group">
+      <div class="x-fact"><b>5 min</b><span>par mois, pas une de plus</span></div><svg class="x-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 8.1L22 12l-8.1 1.9L12 22l-1.9-8.1L2 12l8.1-1.9z"/></svg>
+      <div class="x-fact"><b>+1 840 €</b><span>de CA bonus en moyenne par mois</span></div><svg class="x-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 8.1L22 12l-8.1 1.9L12 22l-1.9-8.1L2 12l8.1-1.9z"/></svg>
+      <div class="x-fact"><b>1 cliente</b><span>suffit à rembourser l'abonnement</span></div><svg class="x-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 8.1L22 12l-8.1 1.9L12 22l-1.9-8.1L2 12l8.1-1.9z"/></svg>
+      <div class="x-fact"><b>0</b><span>accès à votre compte ou à votre agenda</span></div><svg class="x-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 8.1L22 12l-8.1 1.9L12 22l-1.9-8.1L2 12l8.1-1.9z"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROBLÈME ============ -->
+<section class="x-problem">
+  <div class="x-wrap">
+    <h2 class="x-fill" data-fill>Votre logiciel sait qui est venu. Il ne vous dit pas qui ne reviendra pas.</h2>
+    <div class="x-problem-grid">
+      <div class="x-problem-photo x-rv" data-zoom>
+        <img src="https://images.unsplash.com/photo-1731514771613-991a02407132?auto=format&fit=crop&w=1000&q=80" alt="Cliente recevant un masque visage" width="900" height="900" loading="lazy">
+        <div class="x-note" data-parallax="-0.08"><span class="x-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg></span><div><b>Dernière visite : il y a 8 semaines</b><span>Rythme habituel : toutes les 5 semaines</span></div></div>
+      </div>
+      <div class="x-problem-copy">
+        <p class="x-lead x-rv">Votre fichier client contient des centaines de clientes. Une partie de leur valeur dort, parce que personne n'a le temps de l'analyser.</p>
+        <ul class="x-plist">
+          <li class="x-rv"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span><div><strong>Des clientes viennent une fois et disparaissent</strong><p>sans que personne ne s'en aperçoive avant plusieurs mois.</p></div></li>
+          <li class="x-rv"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><div><strong>Des prestations complémentaires restent inconnues</strong><p>de clientes qui les auraient volontiers essayées.</p></div></li>
+          <li class="x-rv"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><div><strong>La même prestation se répète</strong><p>sans qu'une cure ou un forfait ne soit jamais proposé.</p></div></li>
+          <li class="x-rv"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M9 2h6v4H9z"/><path d="M8 6h8l1 4v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10z"/><path d="M7 13h10"/></svg></span><div><strong>Les produits conseillés en cabine</strong><p>sont achetés ailleurs, ou pas du tout.</p></div></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-<div class="trust"><div class="wrap trust-grid">
-  <div class="trust-item"><b class="grad-text">5 min</b><span>par mois, pas une de plus</span></div>
-  <div class="trust-item"><b class="grad-text">+1 840 €</b><span>de CA bonus en moyenne par mois</span></div>
-  <div class="trust-item"><b class="grad-text">1 cliente</b><span>suffit à rembourser l'abonnement</span></div>
-  <div class="trust-item"><b class="grad-text">0</b><span>accès à votre compte ou à votre agenda</span></div>
-</div></div>
-<section class="problem">
-  <div class="wrap problem-grid">
-    <div class="problem-photo reveal"><img src="https://images.unsplash.com/photo-1731514771613-991a02407132?auto=format&fit=crop&w=1000&q=80" alt="Cliente recevant un masque visage" width="900" height="900" loading="lazy"><div class="float"><span class="ico">⏰</span><div><b>Dernière visite : il y a 8 semaines</b><span>Rythme habituel : toutes les 5 semaines</span></div></div></div>
-    <div class="reveal">
-      <h2>Votre logiciel sait qui est venu. Il ne vous dit pas <span class="grad-text">qui ne reviendra pas.</span></h2>
-      <p class="lead" style="margin-top:1.25rem">Votre fichier client contient des centaines de clientes. Une partie de leur valeur dort, parce que personne n'a le temps de l'analyser.</p>
-      <ul class="problem-list">
-        <li><span class="ico t-rose">👋</span><p><strong>Des clientes viennent une fois et disparaissent</strong>sans que personne ne s'en aperçoive avant plusieurs mois.</p></li>
-        <li><span class="ico t-lav">🤷‍♀️</span><p><strong>Des prestations complémentaires restent inconnues</strong>de clientes qui les auraient volontiers essayées.</p></li>
-        <li><span class="ico t-mint">🔁</span><p><strong>La même prestation se répète</strong>sans qu'une cure ou un forfait ne soit jamais proposé.</p></li>
-        <li><span class="ico t-sky">🧴</span><p><strong>Les produits conseillés en cabine</strong>sont achetés ailleurs, ou pas du tout.</p></li>
-      </ul>
+
+<!-- ============ ÉTAPES (épinglé au défilement) ============ -->
+<section class="x-steps x-night" id="fonctionnement" style="--x-n:4">
+  <div class="x-steps-head"><div class="x-wrap">
+    <h2 class="x-h2 x-rv">Un rituel de 5 minutes, <i>une fois par mois</i></h2>
+    <p class="x-lead x-rv">Pas de connexion à votre logiciel, pas de synchronisation, pas de mot de passe à confier. Juste un fichier à déposer.</p>
+  </div></div>
+  <div class="x-pin">
+    <div class="x-stage x-wrap">
+      <div class="x-steps-rail" aria-label="Étapes"><button type="button" data-goto="0" aria-label="Étape 1">1</button><button type="button" data-goto="1" aria-label="Étape 2">2</button><div class="x-rail" aria-hidden="true"><i></i></div><button type="button" data-goto="2" aria-label="Étape 3">3</button><button type="button" data-goto="3" aria-label="Étape 4">4</button></div>
+      <div class="x-texts">
+        <article class="x-step on">
+          <div class="x-step-top"><span class="x-step-n">1</span><span class="x-step-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>2 minutes</span></div>
+          <h3>Déposez votre export</h3>
+          <p>Le 1er du mois, exportez vos clientes depuis Planity, Kiute, Treatwell ou Excel, et déposez le fichier. Les colonnes sont reconnues automatiquement.</p>
+          <div class="x-screen" data-screen="0">
+            <div class="shot" aria-label="Capture : import de la base clientes">
+              <div class="bar"><i></i><i></i><i></i><span>Importer ma base de données client</span></div>
+              <div class="in">
+                <div class="drop"><span class="ok">✓</span><b>clientes-planity-octobre.csv</b><span class="mut">248 lignes détectées, 2 Mo</span></div>
+                <div class="card"><b>Correspondance des colonnes</b><div class="map"><span>Nom complet</span><span class="mut">←</span><code>Client</code></div><div class="map"><span>Téléphone</span><span class="mut">←</span><code>Mobile</code></div><div class="map"><span>Dernière visite</span><span class="mut">←</span><code>Dernier RDV</code></div><div class="map"><span>Total dépensé</span><span class="mut">←</span><code>CA TTC</code></div></div>
+                <div class="cta">Importer 248 clientes</div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="x-step">
+          <div class="x-step-top"><span class="x-step-n">2</span><span class="x-step-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>0 minute</span></div>
+          <h3>BeautyRevenue analyse</h3>
+          <p>Rythme de visite, dernière venue, prestations répétées, produits achetés : les opportunités de chiffre d'affaires apparaissent, classées par valeur, avec l'offre adaptée.</p>
+          <div class="x-screen" data-screen="1">
+            <div class="shot" aria-label="Capture : opportunités du mois">
+              <div class="bar"><i></i><i></i><i></i><span>Opportunités d'octobre</span></div>
+              <div class="in">
+                <div class="kpis"><div class="kpi g"><div class="v">18</div><div class="l">opportunités détectées</div></div><div class="kpi"><div class="v" style="color:var(--mint-ink)">1 260 €</div><div class="l">de potentiel en attente</div></div></div>
+                <div class="row"><span class="av a2">SL</span><div><div class="who">Sophie L. <span class="tag t-mint">Cure</span></div><div class="why">4 épilations en 6 mois, cure non proposée</div></div><span class="money">+290 €</span></div>
+                <div class="row"><span class="av a1">EM</span><div><div class="who">Emma M. <span class="tag t-rose">Reconquête</span></div><div class="why">Venait toutes les 5 sem., absente depuis 8</div></div><span class="money">+65 €</span></div>
+                <div class="row"><span class="av a4">NR</span><div><div class="who">Nadia R. <span class="tag t-peach">Parrainage</span></div><div class="why">38 visites, fidèle depuis 3 ans</div></div><span class="money">+120 €</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="x-step">
+          <div class="x-step-top"><span class="x-step-n">3</span><span class="x-step-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>3 minutes</span></div>
+          <h3>Envoyez, puis encaissez</h3>
+          <p>Chaque message est prêt, avec son offre et le lien vers votre page de réservation. Vous relisez, vous envoyez depuis votre téléphone, par SMS, WhatsApp ou e-mail.</p>
+          <div class="x-screen" data-screen="2">
+            <div class="shot" aria-label="Capture : envoi WhatsApp">
+              <div class="bar"><i></i><i></i><i></i><span>Cure / forfait : Sophie</span></div>
+              <div class="in">
+                <div class="seg"><span>SMS</span><span class="on">WhatsApp</span><span>E-mail</span></div>
+                <div><div class="wa-head"><i>SL</i>Sophie Lambert, 06 98 23 11 02</div><div class="wa-body"><div class="bubble">Bonjour Sophie, vous venez régulièrement pour votre épilation jambes. Bonne nouvelle : cure 6 séances à 290 € au lieu de 420 €, sur créneaux de semaine. Réservez ici : <a>planity.com/institut-lumiere</a></div></div></div>
+                <div class="cta">Ouvrir dans WhatsApp et envoyer</div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="x-step">
+          <div class="x-step-top"><span class="x-step-n">4</span><span class="x-step-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Chaque mois</span></div>
+          <h3>Mesurez ce que ça rapporte</h3>
+          <p>Dès qu'une cliente réserve ou achète, vous le marquez : le CA bonus se met à jour. Vous voyez ce que rapportent vos 5 minutes, et combien de fois l'abonnement est remboursé.</p>
+          <div class="x-screen" data-screen="3">
+            <div class="shot" aria-label="Capture : vue d'ensemble">
+              <div class="bar"><i></i><i></i><i></i><span>Vue d'ensemble d'octobre</span></div>
+              <div class="in">
+                <div class="kpis"><div class="kpi g"><div class="v">+1 840 €</div><div class="l">CA bonus ce mois</div></div><div class="kpi"><div class="v">74×</div><div class="l">l'abonnement remboursé</div></div><div class="kpi"><div class="v">14</div><div class="l">clientes revenues</div></div><div class="kpi"><div class="v">4 min 20</div><div class="l">passées ce mois</div></div></div>
+                <div class="card"><b>Votre rituel d'octobre</b><span class="mut">Base importée le 1er octobre, prochain import conseillé le 1er novembre</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="x-screens" aria-hidden="true"></div>
     </div>
   </div>
+  <div class="x-wrap"><div class="x-total x-rv"><div><b>5 minutes</b><span>de votre temps chaque mois</span></div><div><b>+1 840 €</b><span>de CA bonus en moyenne, soit 74 fois l'abonnement</span></div></div></div>
+  <div style="height:clamp(3rem,6vw,5rem)"></div>
 </section>
 
-<section class="steps" id="fonctionnement">
-  <div class="wrap">
-    <div class="section-head"><div><h2>Un rituel de 5 minutes, une fois par mois</h2><p class="lead">Pas de connexion à votre logiciel, pas de synchronisation, pas de mot de passe à confier. Juste un fichier à déposer. Faites défiler pour voir chaque étape dans l'espace client.</p></div><div class="car-ctl"><button type="button" data-car="prev" aria-label="Étape précédente"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="dots" id="carDots"></div><button type="button" data-car="next" aria-label="Étape suivante"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
-    <div class="car"><div class="track" id="stepsTrack">
-
-      <article class="step">
-        <div class="top"><span class="n">1</span><span class="time">⏱ 2 minutes</span></div>
-        <h3>Déposez votre export</h3>
-        <p>Le 1er du mois, exportez vos clientes depuis Planity, Kiute, Treatwell ou Excel, et déposez le fichier. Les colonnes sont reconnues automatiquement.</p>
-        <div class="shot" aria-label="Capture : import de la base clientes">
-          <div class="bar"><i></i><i></i><i></i><span>Importer ma base de données client</span></div>
-          <div class="in">
-            <div class="drop"><span class="ok">✓</span><b>clientes-planity-octobre.csv</b><span class="mut">248 lignes détectées · 2 Mo</span></div>
-            <div class="card"><b>Correspondance des colonnes</b><div class="map"><span>Nom complet</span><span class="mut">←</span><code>Client</code></div><div class="map"><span>Téléphone</span><span class="mut">←</span><code>Mobile</code></div><div class="map"><span>Dernière visite</span><span class="mut">←</span><code>Dernier RDV</code></div><div class="map"><span>Total dépensé</span><span class="mut">←</span><code>CA TTC</code></div></div>
-            <div class="cta">Importer 248 clientes</div>
+<!-- ============ LEVIERS (défilement horizontal) ============ -->
+<section class="x-levers" id="leviers">
+  <div class="x-levers-head"><div class="x-wrap">
+    <h2 class="x-h2 x-rv">Cinq leviers pour faire travailler <i>votre clientèle existante</i></h2>
+    <p class="x-lead x-rv">Pas de promotion envoyée à tout le monde : la bonne offre, à la bonne cliente, au bon moment. Jamais un créneau bradé que vous auriez vendu plein tarif.</p>
+    <div class="x-hhint" aria-hidden="true"><span class="x-bar"><i></i></span><span>Faites défiler</span></div>
+  </div></div>
+  <div class="x-hpin">
+    <div class="x-hstage">
+      <div class="x-htrack">
+        <article class="x-lever is-dark">
+          <span class="x-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></span>
+          <h3>Faire revenir les clientes perdues</h3>
+          <p>BeautyRevenue repère les clientes dont le rythme habituel est rompu, avant qu'elles n'oublient votre institut, et prépare la relance avec une offre de retour.</p>
+          <div class="shot" aria-label="Capture : relance par SMS">
+            <div class="bar"><i></i><i></i><i></i><span>Reconquête : Emma</span></div>
+            <div class="in">
+              <div class="row"><span class="av a1">EM</span><div><div class="who">Emma Martin</div><div class="why">Venait toutes les 5 sem., absente depuis 8 sem.</div></div><span class="money">+65 €</span></div>
+              <div class="card"><span class="mut" style="font-size:.66rem;font-weight:700;color:var(--mint-ink)">Offre incluse</span><b>-10 % sur votre prochain soin visage</b></div>
+              <div class="card"><span class="mut" style="font-size:.66rem;font-weight:700">Aperçu SMS : 142 caractères, 1 SMS</span><span>Bonjour Emma, cela fait un moment que nous ne vous avons pas vue à l'Institut Lumière ! -10 % sur votre prochain soin visage. Réservez ici : planity.com/…</span></div>
+            </div>
           </div>
-        </div>
-      </article>
-
-      <article class="step">
-        <div class="top"><span class="n">2</span><span class="time">⏱ 0 minute</span></div>
-        <h3>BeautyRevenue analyse</h3>
-        <p>Rythme de visite, dernière venue, prestations répétées, produits achetés : les opportunités de chiffre d'affaires apparaissent, classées par valeur, avec l'offre adaptée.</p>
-        <div class="shot" aria-label="Capture : opportunités du mois">
-          <div class="bar"><i></i><i></i><i></i><span>Opportunités · octobre</span></div>
-          <div class="in">
-            <div class="kpis"><div class="kpi g"><div class="v">18</div><div class="l">opportunités détectées</div></div><div class="kpi"><div class="v" style="color:var(--mint-ink)">1 260 €</div><div class="l">de potentiel en attente</div></div></div>
-            <div class="row"><span class="av a2">SL</span><div><div class="who">Sophie L. <span class="tag t-mint">Cure</span></div><div class="why">4 épilations en 6 mois · cure non proposée</div></div><span class="money">+290 €</span></div>
-            <div class="row"><span class="av a1">EM</span><div><div class="who">Emma M. <span class="tag t-rose">Reconquête</span></div><div class="why">Venait toutes les 5 sem. · absente depuis 8</div></div><span class="money">+65 €</span></div>
-            <div class="row"><span class="av a4">NR</span><div><div class="who">Nadia R. <span class="tag t-peach">Parrainage</span></div><div class="why">38 visites · fidèle depuis 3 ans</div></div><span class="money">+120 €</span></div>
+        </article>
+        <article class="x-lever is-blush">
+          <span class="x-plan">Formule Croissance</span>
+          <span class="x-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+          <h3>Augmenter le panier moyen</h3>
+          <p>Les prestations complémentaires cohérentes avec l'historique de chaque cliente sont identifiées et proposées au bon moment.</p>
+        </article>
+        <article class="x-lever is-photo">
+          <div class="x-lever-img"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1200&q=80" alt="Pose de vernis en institut" width="800" height="600" loading="lazy"></div>
+          <div class="x-lever-body">
+            <span class="x-plan">Formule Croissance</span>
+            <h3>Transformer les séances en cures</h3>
+            <p>Une cliente qui revient pour la même prestation se voit proposer une cure. Du chiffre d'affaires encaissé tout de suite, six visites garanties, et une cliente qui n'ira pas ailleurs.</p>
           </div>
-        </div>
-      </article>
-
-      <article class="step">
-        <div class="top"><span class="n">3</span><span class="time">⏱ 3 minutes</span></div>
-        <h3>Envoyez, puis encaissez</h3>
-        <p>Chaque message est prêt, avec son offre et le lien vers votre page de réservation. Vous relisez, vous envoyez depuis votre téléphone, par SMS, WhatsApp ou e-mail.</p>
-        <div class="shot" aria-label="Capture : envoi WhatsApp">
-          <div class="bar"><i></i><i></i><i></i><span>Cure / forfait · Sophie</span></div>
-          <div class="in">
-            <div class="seg"><span>SMS</span><span class="on">WhatsApp</span><span>E-mail</span></div>
-            <div><div class="wa-head"><i>SL</i>Sophie Lambert · 06 98 23 11 02</div><div class="wa-body"><div class="bubble">Bonjour Sophie, vous venez régulièrement pour votre épilation jambes. Bonne nouvelle : cure 6 séances à 290 € au lieu de 420 €, sur créneaux de semaine. Réservez ici : <a>planity.com/institut-lumiere</a></div></div></div>
-            <div class="cta">Ouvrir dans WhatsApp et envoyer</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="step">
-        <div class="top"><span class="n">4</span><span class="time">📈 Chaque mois</span></div>
-        <h3>Mesurez ce que ça rapporte</h3>
-        <p>Dès qu'une cliente réserve ou achète, vous le marquez : le CA bonus se met à jour. Vous voyez ce que rapportent vos 5 minutes, et combien de fois l'abonnement est remboursé.</p>
-        <div class="shot" aria-label="Capture : vue d'ensemble">
-          <div class="bar"><i></i><i></i><i></i><span>Vue d'ensemble · octobre</span></div>
-          <div class="in">
-            <div class="kpis"><div class="kpi g"><div class="v">+1 840 €</div><div class="l">CA bonus ce mois</div></div><div class="kpi"><div class="v">74×</div><div class="l">l'abonnement remboursé</div></div><div class="kpi"><div class="v">14</div><div class="l">clientes revenues</div></div><div class="kpi"><div class="v">4 min 20</div><div class="l">passées ce mois</div></div></div>
-            <div class="card"><b>Votre rituel d'octobre</b><span class="mut">Base importée le 1er octobre · prochain import conseillé le 1er novembre</span></div>
-          </div>
-        </div>
-      </article>
-
-    </div></div>
-    <div class="steps-total reveal"><div><b>5 minutes</b><br><span>de votre temps chaque mois</span></div><div style="text-align:right"><b>+1 840 €</b><br><span>de CA bonus en moyenne, soit 74 fois l'abonnement</span></div></div>
-  </div>
-</section>
-
-<section id="leviers">
-  <div class="wrap">
-    <div class="section-head"><h2>Cinq leviers pour faire travailler <span class="grad-text">votre clientèle existante</span></h2><p class="lead">Pas de promotion envoyée à tout le monde : la bonne offre, à la bonne cliente, au bon moment. Jamais un créneau bradé que vous auriez vendu plein tarif.</p></div>
-    <div class="bento">
-      <article class="lever shotcard reveal">
-        <div class="body"><span class="ico t-rose" style="background:rgba(255,255,255,.12);color:#fff">💌</span><h3>Faire revenir les clientes perdues</h3><p>BeautyRevenue repère les clientes dont le rythme habituel est rompu, avant qu'elles n'oublient votre institut, et prépare la relance avec une offre de retour.</p></div>
-        <div class="shotwrap"><div class="shot" aria-label="Capture : relance par SMS">
-          <div class="bar"><i></i><i></i><i></i><span>Reconquête · Emma</span></div>
-          <div class="in">
-            <div class="row"><span class="av a1">EM</span><div><div class="who">Emma Martin</div><div class="why">Venait toutes les 5 sem. · absente depuis 8 sem.</div></div><span class="money">+65 €</span></div>
-            <div class="card" style="background:var(--g-brand-soft);border:0"><span class="mut" style="font-size:.64rem;font-weight:700;color:var(--mint-ink)">OFFRE INCLUSE</span><b>-10 % sur votre prochain soin visage</b></div>
-            <div class="card"><span class="mut" style="font-size:.64rem;font-weight:700">APERÇU SMS · 142 caractères · 1 SMS</span><span>Bonjour Emma, cela fait un moment que nous ne vous avons pas vue à l'Institut Lumière ! -10 % sur votre prochain soin visage. Réservez ici : planity.com/…</span></div>
-            <div class="cta">Ouvrir dans SMS et envoyer</div>
-          </div>
-        </div></div>
-      </article>
-      <article class="lever tint-lav reveal"><span class="plan-tag">Croissance</span><span class="ico t-lav">🛍️</span><h3>Augmenter le panier moyen</h3><p>Les prestations complémentaires cohérentes avec l'historique de chaque cliente sont identifiées et proposées au bon moment.</p></article>
-      <article class="lever photo reveal"><div class="img"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1000&q=80" alt="Pose de vernis en institut" width="800" height="600" loading="lazy"></div><div class="body"><span class="plan-tag">Croissance</span><span class="ico t-mint">📅</span><h3>Transformer les séances en cures</h3><p>Une cliente qui revient pour la même prestation se voit proposer une cure. Du chiffre d'affaires encaissé tout de suite, six visites garanties, et une cliente qui n'ira pas ailleurs.</p></div></article>
-      <article class="lever tint-sky reveal"><span class="plan-tag">Croissance</span><span class="ico t-sky">🧴</span><h3>Vendre les produits conseillés</h3><p>Après le soin, la cliente reçoit la routine recommandée par son esthéticienne et peut la commander auprès de votre institut.</p></article>
-      <article class="lever tint-mint reveal"><span class="plan-tag">Croissance</span><span class="ico t-mint">👯‍♀️</span><h3>Développer le parrainage</h3><p>Vos clientes les plus fidèles reçoivent une offre de parrainage. Elles gagnent un avantage quand la personne recommandée devient réellement cliente.</p></article>
-    </div>
-  </div>
-</section>
-<section class="dash" id="resultats">
-  <div class="wrap dash-grid">
-    <div class="dash-panel reveal" aria-label="Exemple de tableau de bord">
-      <div class="period"><span>Octobre · Institut Lumière</span><span>4 min 20 passées</span></div>
-      <div class="kpi-main"><div class="label">CA bonus généré par BeautyRevenue</div><div class="num">+<span data-count="1840">0</span> €</div><div class="delta">▲ 74× l'abonnement du mois</div></div>
-      <div class="kpi-grid">
-        <div class="kpi"><div class="num" data-count="14">0</div><div class="label">clientes revenues</div><div class="bar"><i data-w="70"></i></div></div>
-        <div class="kpi"><div class="num" data-count="5">0</div><div class="label">cures vendues</div><div class="bar"><i data-w="45"></i></div></div>
-        <div class="kpi"><div class="num"><span data-count="420">0</span> €</div><div class="label">de produits vendus</div><div class="bar"><i data-w="60"></i></div></div>
-        <div class="kpi"><div class="num"><span data-count="82">0</span> €</div><div class="label">de panier moyen bonus</div><div class="bar"><i data-w="80"></i></div></div>
+        </article>
+        <article class="x-lever is-champagne">
+          <span class="x-plan">Formule Croissance</span>
+          <span class="x-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6v4H9z"/><path d="M8 6h8l1 4v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10z"/><path d="M7 13h10"/></svg></span>
+          <h3>Vendre les produits conseillés</h3>
+          <p>Après le soin, la cliente reçoit la routine recommandée par son esthéticienne et peut la commander auprès de votre institut.</p>
+        </article>
+        <article class="x-lever">
+          <span class="x-plan">Formule Croissance</span>
+          <span class="x-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4.5 4.5 0 0 1 8 -2.8"/></svg></span>
+          <h3>Développer le parrainage</h3>
+          <p>Vos clientes les plus fidèles reçoivent une offre de parrainage. Elles gagnent un avantage quand la personne recommandée devient réellement cliente.</p>
+        </article>
       </div>
     </div>
-    <div class="dash-copy reveal">
-      <h2>Un tableau de bord qui parle <span class="grad-text">d'argent</span>, pas de statistiques</h2>
-      <p class="lead">Chaque euro affiché correspond à une cliente revenue, une cure signée ou un produit vendu après un message envoyé depuis BeautyRevenue. Rien d'estimé, rien d'« influencé ».</p>
-      <ul>
-        <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Le temps passé est affiché : vous voyez ce que rapportent vos 5 minutes.</li>
-        <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Suivi par levier : reconquête, cures, produits, parrainage.</li>
-        <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Comparaison avec votre abonnement, mois après mois.</li>
+  </div>
+</section>
+
+<!-- ============ RÉSULTATS ============ -->
+<section class="x-results" id="resultats">
+  <div class="x-wrap x-results-grid">
+    <div class="x-panel" aria-label="Exemple de tableau de bord">
+      <div class="x-panel-top"><span>Octobre, Institut Lumière</span><span>4 min 20 passées</span></div>
+      <div class="x-big"><small>CA bonus généré par BeautyRevenue</small><div class="x-num">+<span data-count="1840">0</span> €</div><div class="x-delta">74 fois l'abonnement du mois</div></div>
+      <div class="x-kgrid">
+        <div class="x-k"><div class="x-n" data-count="14">0</div><div class="x-l">clientes revenues</div><div class="x-meter"><i data-w="70"></i></div></div>
+        <div class="x-k"><div class="x-n" data-count="5">0</div><div class="x-l">cures vendues</div><div class="x-meter"><i data-w="45"></i></div></div>
+        <div class="x-k"><div class="x-n"><span data-count="420">0</span> €</div><div class="x-l">de produits vendus</div><div class="x-meter"><i data-w="60"></i></div></div>
+        <div class="x-k"><div class="x-n"><span data-count="82">0</span> €</div><div class="x-l">de panier moyen bonus</div><div class="x-meter"><i data-w="80"></i></div></div>
+      </div>
+    </div>
+    <div class="x-results-copy">
+      <h2 class="x-h2 x-rv">Un tableau de bord qui parle d'argent, <i>pas de statistiques</i></h2>
+      <p class="x-lead x-rv">Chaque euro affiché correspond à une cliente revenue, une cure signée ou un produit vendu après un message envoyé depuis BeautyRevenue. Rien d'estimé, rien d'« influencé ».</p>
+      <ul class="x-checks">
+        <li class="x-rv"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Le temps passé est affiché : vous voyez ce que rapportent vos 5 minutes.</li>
+        <li class="x-rv"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Suivi par levier : reconquête, cures, produits, parrainage.</li>
+        <li class="x-rv"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Comparaison avec votre abonnement, mois après mois.</li>
       </ul>
-      <div><a href="#/connexion" class="btn btn-ghost">Découvrir l'espace client</a></div>
+      <div class="x-rv"><a href="#/connexion" class="x-btn x-btn-line">Découvrir l'espace client</a></div>
     </div>
   </div>
 </section>
-<section id="tarifs">
-  <div class="wrap">
-    <div class="section-head" style="margin-inline:auto;text-align:center;max-width:680px;justify-items:center"><h2>Remboursé dès la <span class="grad-text">première cliente</span></h2><p class="lead" style="margin-inline:auto">Une cure à 290 € paie près d'un an de BeautyRevenue. Une simple cliente revenue paie le mois.</p><span class="promo">🎁 Premier mois à <b>-50 %</b> sur les deux formules</span></div>
-    <div class="pricing-grid">
-      <article class="plan reveal">
-        <div class="plan-head"><div class="name">Essentiel</div><div class="desc">Faire revenir les clientes perdues.</div></div>
-        <div class="price"><b>15,99 €</b><small>/ mois</small></div>
-        <div class="price-note">Premier mois : 7,99 €</div>
-        <ul>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Détection des clientes à reconquérir</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Messages de relance prêts à envoyer par SMS et e-mail</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Lien vers votre page de réservation</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>CA bonus du mois</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Jusqu'à 300 clientes, 1 utilisatrice</span></li>
-          <li class="off"><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Cures, produits, ventes complémentaires et parrainage</span></li>
-          <li class="off"><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Plan de revenus par cliente et messages personnalisables</span></li>
+
+<!-- ============ TARIFS ============ -->
+<section class="x-pricing" id="tarifs">
+  <div class="x-wrap">
+    <div class="x-pricing-head">
+      <h2 class="x-h2 x-rv">Remboursé dès la <i>première cliente</i></h2>
+      <p class="x-lead x-rv">Une cure à 290 € paie près d'un an de BeautyRevenue. Une simple cliente revenue paie le mois.</p>
+      <span class="x-promo x-rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8C10 4 7 4 7 6s3 2 5 2c2 0 5 0 5-2s-3-2-5 2"/></svg>Premier mois à -50 % sur les deux formules</span>
+    </div>
+    <div class="x-plans">
+      <article class="x-planc x-rv">
+        <div><div class="x-pname">Essentiel</div><div class="x-pdesc">Faire revenir les clientes perdues.</div></div>
+        <div class="x-price"><b>15,99 €</b><small>/ mois</small></div>
+        <div class="x-pnote">Premier mois : 7,99 €</div>
+        <ul class="x-feats">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Détection des clientes à reconquérir</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Messages de relance prêts à envoyer par SMS et e-mail</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Lien vers votre page de réservation</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>CA bonus du mois</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Jusqu'à 300 clientes, 1 utilisatrice</span></li>
+          <li class="off"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Cures, produits, ventes complémentaires et parrainage</span></li>
+          <li class="off"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Plan de revenus par cliente et messages personnalisables</span></li>
         </ul>
-        <div class="roi"><b>1 cliente revenue</b> (65 €) = 4 mois d'abonnement.</div>
-        <button type="button" class="btn btn-ghost" data-contact="essentiel">Commencer avec Essentiel</button>
+        <div class="x-roi"><b>1 cliente revenue</b> (65 €) = 4 mois d'abonnement.</div>
+        <button type="button" class="x-btn x-btn-line" data-contact="essentiel">Commencer avec Essentiel</button>
       </article>
-      <article class="plan featured reveal"><span class="badge">Recommandé · là où se trouve le bonus</span>
-        <div class="plan-head"><div class="name">Croissance</div><div class="desc">Faire revenir vos clientes, et faire grandir leur valeur.</div></div>
-        <div class="price"><b class="grad-text">24,99 €</b><small>/ mois</small></div>
-        <div class="price-note">Premier mois : 12,49 €</div>
-        <ul>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Tout Essentiel</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Les 5 leviers</b> : cures, produits, ventes complémentaires, parrainage</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Plan de revenus sur 6 mois pour chaque cliente</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Messages et offres personnalisables, WhatsApp inclus</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Lien de réservation signé : le CA attribué à chaque message</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Import par e-mail, rappel mensuel, export comptable</span></li>
-          <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Clientes illimitées, plusieurs esthéticiennes</span></li>
+      <article class="x-planc is-featured x-rv"><span class="x-badge">Recommandé : là où se trouve le bonus</span>
+        <div><div class="x-pname">Croissance</div><div class="x-pdesc">Faire revenir vos clientes, et faire grandir leur valeur.</div></div>
+        <div class="x-price"><b>24,99 €</b><small>/ mois</small></div>
+        <div class="x-pnote">Premier mois : 12,49 €</div>
+        <ul class="x-feats">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Tout Essentiel</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span><b>Les 5 leviers</b> : cures, produits, ventes complémentaires, parrainage</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Plan de revenus sur 6 mois pour chaque cliente</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Messages et offres personnalisables, WhatsApp inclus</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Lien de réservation signé : le CA attribué à chaque message</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Import par e-mail, rappel mensuel, export comptable</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Clientes illimitées, plusieurs esthéticiennes</span></li>
         </ul>
-        <div class="roi"><b>1 cure vendue</b> (290 €) = 11 mois d'abonnement.</div>
-        <button type="button" class="btn btn-primary" data-contact="croissance">Commencer avec Croissance</button>
+        <div class="x-roi"><b>1 cure vendue</b> (290 €) = 11 mois d'abonnement.</div>
+        <button type="button" class="x-btn x-btn-blush" data-contact="croissance">Commencer avec Croissance</button>
       </article>
     </div>
-    <p class="pricing-note">Sans engagement · Prix HT · -50 % le premier mois, puis tarif normal · Changement de formule à tout moment</p>
+    <p class="x-pfine">Sans engagement, prix HT. -50 % le premier mois, puis tarif normal. Changement de formule à tout moment.</p>
   </div>
 </section>
-<section class="cta" id="demo">
-  <div class="wrap"><div class="cta-box reveal"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=70" alt="" width="1600" height="900" loading="lazy" aria-hidden="true"><div><h2>Combien dort dans votre fichier client ?</h2><p>Envoyez-nous un export anonymisé de votre clientèle : en 20 minutes, nous vous montrons les opportunités détectées. Sans engagement.</p><div class="hero-actions"><button type="button" class="btn btn-light" data-contact="analyse">Demander mon analyse gratuite</button><button type="button" class="btn btn-outline-light" data-open-pres>▶ Revoir la présentation</button></div></div></div></div>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="x-final" id="demo">
+  <div class="x-final-box">
+    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=70" alt="" width="1600" height="900" loading="lazy" aria-hidden="true">
+    <div class="x-wrap x-final-in">
+      <h2>Combien dort dans <i>votre fichier client ?</i></h2>
+      <p>Envoyez-nous un export anonymisé de votre clientèle : en 20 minutes, nous vous montrons les opportunités détectées. Sans engagement.</p>
+      <div class="x-hero-actions"><button type="button" class="x-btn x-btn-blush" data-contact="analyse">Demander mon analyse gratuite</button><button type="button" class="x-btn x-btn-line" style="border-color:rgba(255,255,255,.5)" data-open-pres>Revoir la présentation</button></div>
+    </div>
+  </div>
 </section>
 </main>
-<footer class="site-footer"><div class="wrap">
-  <div class="foot-grid">
-    <div class="foot-col"><a href="#" class="logo"><span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-6 4 4 7-9"/><path d="M15 6h5v5"/></svg></span>BeautyRevenue</a><p>5 minutes par mois pour faire revenir vos clientes et augmenter leur valeur. Fonctionne avec l'export de n'importe quel logiciel.</p></div>
-    <div class="foot-col"><strong>Produit</strong><a href="#fonctionnement">Comment ça marche</a><a href="#leviers">Leviers</a><a href="#tarifs">Tarifs</a><a href="#/connexion">Espace client</a></div>
-    <div class="foot-col"><strong>Entreprise</strong><a href="#">À propos</a><button type="button" data-contact="contact">Contact</button><a href="#">Recrutement</a></div>
-    <div class="foot-col"><strong>Légal</strong><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">CGV</a></div>
+
+<footer class="x-footer"><div class="x-wrap">
+  <div class="x-footer-grid">
+    <div class="x-footer-brand"><a href="#" class="x-logo">Beauty<i>Revenue</i></a><p>5 minutes par mois pour faire revenir vos clientes et augmenter leur valeur. Fonctionne avec l'export de n'importe quel logiciel.</p></div>
+    <div class="x-fcol"><strong>Produit</strong><a href="#fonctionnement">Comment ça marche</a><a href="#leviers">Leviers</a><a href="#tarifs">Tarifs</a><a href="#/connexion">Espace client</a></div>
+    <div class="x-fcol"><strong>Entreprise</strong><a href="#">À propos</a><button type="button" data-contact="contact">Contact</button><a href="#">Recrutement</a></div>
+    <div class="x-fcol"><strong>Légal</strong><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">CGV</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 BeautyRevenue. Tous droits réservés.</span><span>Données hébergées en France · Contrat de sous-traitance RGPD inclus · Photos : Unsplash</span></div>
+  <div class="x-giant" aria-hidden="true">BeautyRevenue</div>
+  <div class="x-footer-bottom"><span>© 2026 BeautyRevenue. Tous droits réservés.</span><span>Données hébergées en France. Contrat de sous-traitance RGPD inclus. Photos : Unsplash.</span></div>
 </div></footer>
 </div>
+
 
 <!-- ===================== POP-UP CONTACT ===================== -->
 <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
@@ -1012,45 +1447,106 @@ var ICO={
 };
 var svgi=function(k,extra){return ICO[k].replace('<svg','<svg width="16" height="16" style="stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;'+(extra||'')+'"')};
 
-/* ---------- Site ---------- */
-var burger=$('.burger'),menu=$('#mobileMenu');
-burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
-$$('a,button',menu).forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+/* ---------- Site vitrine : menu, compteurs, effets au défilement ---------- */
 function runCount(el,target,dur,suffix){if(reduce){el.textContent=fmt(target)+(suffix||'');return}var start=null;dur=dur||1300;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(target*e)+(suffix||'');if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
-if('IntersectionObserver' in window){
-  var ioC=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCount(en.target,+en.target.getAttribute('data-count'));ioC.unobserve(en.target)}})},{threshold:.5});$$('[data-count]').forEach(function(c){ioC.observe(c)});
-  var ioB=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.style.width=en.target.getAttribute('data-w')+'%';ioB.unobserve(en.target)}})},{threshold:.3});$$('[data-w]').forEach(function(b){ioB.observe(b)});
-  var ioR=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ioR.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});$$('.reveal').forEach(function(r){ioR.observe(r)});
-}else{$$('[data-count]').forEach(function(c){c.textContent=fmt(+c.getAttribute('data-count'))});$$('[data-w]').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%'});$$('.reveal').forEach(function(r){r.classList.add('in')})}
-$$('img[src^="https://images.unsplash.com"]').forEach(function(img){img.addEventListener('error',function(){img.style.display='none'})});
-
-/* ---------- Carrousel des étapes : bouge au défilement ---------- */
 (function(){
-  var track=$('#stepsTrack'),steps=$$('.step',track),dots=$('#carDots'),section=$('#fonctionnement');
-  if(!track||!steps.length)return;
-  dots.innerHTML=steps.map(function(){return '<i></i>'}).join('');
-  var dotEls=$$('i',dots),manualUntil=0;
-  function stepW(){return steps[0].offsetWidth+parseFloat(getComputedStyle(track).gap||20)}
-  function updateDots(){var i=Math.round(track.scrollLeft/stepW());dotEls.forEach(function(d,k){d.classList.toggle('on',k===Math.min(i,steps.length-1))});steps.forEach(function(s,k){var r=s.getBoundingClientRect(),vis=r.left<window.innerWidth-40&&r.right>40;s.classList.toggle('vis',vis)})}
-  track.addEventListener('scroll',updateDots,{passive:true});
-  ['pointerdown','wheel','touchstart'].forEach(function(ev){track.addEventListener(ev,function(){manualUntil=Date.now()+2500},{passive:true})});
-  $$('[data-car]').forEach(function(b){b.addEventListener('click',function(){manualUntil=Date.now()+4000;var dir=b.getAttribute('data-car')==='next'?1:-1;track.scrollBy({left:dir*stepW(),behavior:reduce?'auto':'smooth'})})});
-  var ticking=false;
-  function onScroll(){
-    if(ticking)return;ticking=true;
-    requestAnimationFrame(function(){
-      ticking=false;
-      if(Date.now()<manualUntil){updateDots();return}
-      var r=section.getBoundingClientRect(),vh=window.innerHeight;
-      var p=(vh*0.75-r.top)/(r.height*0.9);p=Math.max(0,Math.min(1,p));
-      var max=track.scrollWidth-track.clientWidth;
-      if(max>0){var eased=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;track.scrollLeft=eased*max}
-      updateDots();
-    });
+  var root=document.documentElement,site=$('#view-site');
+  var clamp=function(v,a,b){return v<a?a:v>b?b:v};
+  /* Menu mobile */
+  var burger=$('.x-burger'),menu=$('#mobileMenu');
+  function setMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');document.body.classList.toggle('x-menu-open',o);document.body.classList.toggle('locked',o)}
+  burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+  $$('a,button',menu).forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))setMenu(false)});
+
+  /* Titre qui se « remplit » mot à mot */
+  var fill=$('[data-fill]',site),words=[];
+  if(fill){fill.innerHTML=fill.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+esc(w)+'</span>'}).join(' ');words=$$('.w',fill)}
+
+  /* Apparitions, compteurs, jauges */
+  if('IntersectionObserver' in window){
+    var ioC=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCount(en.target,+en.target.getAttribute('data-count'),1600);ioC.unobserve(en.target)}})},{threshold:.5});$$('[data-count]',site).forEach(function(c){ioC.observe(c)});
+    var ioB=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.style.width=en.target.getAttribute('data-w')+'%';ioB.unobserve(en.target)}})},{threshold:.3});$$('[data-w]',site).forEach(function(b){ioB.observe(b)});
+    var ioR=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ioR.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});$$('.x-rv',site).forEach(function(r){ioR.observe(r)});
+  }else{$$('[data-count]',site).forEach(function(c){c.textContent=fmt(+c.getAttribute('data-count'))});$$('[data-w]',site).forEach(function(b){b.style.width=b.getAttribute('data-w')+'%'});$$('.x-rv',site).forEach(function(r){r.classList.add('in')})}
+  $$('img[src^="https://images.unsplash.com"]').forEach(function(img){img.addEventListener('error',function(){img.style.visibility='hidden'})});
+
+  /* Séquence d'ouverture du héros */
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('x-loaded')})});
+
+  var hdr=$('.x-header'),prog=$('.x-progress'),hero=$('.x-hero'),heroCopy=$('.x-hero-copy'),glow=$('.x-hero-glow'),arch=$('.x-arch'),ring=$('.x-ring'),cop=$('.x-copilot');
+  var desk=window.matchMedia('(min-width:1000px)');
+  var lastY=window.scrollY,vel=0;
+
+  /* Étapes épinglées : le texte et l'écran changent au fil du défilement */
+  var steps=$('.x-steps'),stepEls=$$('.x-step',steps),pin=$('.x-pin',steps),screensBox=$('.x-screens',steps),screenEls=[],railBtns=$$('[data-goto]',steps),curStep=-1;
+  stepEls.forEach(function(s){var sc=$('.x-screen',s);if(sc){var c=sc.cloneNode(true);screensBox.appendChild(c);screenEls.push(c)}});
+  function setStep(i){if(i===curStep)return;curStep=i;stepEls.forEach(function(s,k){s.classList.toggle('on',k===i)});screenEls.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('past',k<i)});railBtns.forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-goto')===i)})}
+  railBtns.forEach(function(b){b.addEventListener('click',function(){var i=+b.getAttribute('data-goto'),r=pin.getBoundingClientRect(),total=r.height-innerHeight;window.scrollTo({top:window.scrollY+r.top+total*(i+.5)/stepEls.length,behavior:reduce?'auto':'smooth'})})});
+
+  /* Leviers : rail horizontal piloté par le défilement vertical */
+  var lev=$('.x-levers'),hpin=$('.x-hpin',lev),hstage=$('.x-hstage',lev),htrack=$('.x-htrack',lev),levDist=0,photoLever=$('.x-lever.is-photo',lev);
+  hstage.addEventListener('scroll',function(){if(!lev.classList.contains('is-pinned'))lev.style.setProperty('--x-hp',clamp(hstage.scrollLeft/Math.max(1,hstage.scrollWidth-hstage.clientWidth),.08,1))},{passive:true});
+
+  /* Bandeau défilant : on duplique pour une boucle sans couture */
+  var mq=$('.x-marquee-track'),mqGroup=$('.x-marquee-group',mq),mqW=0,mqX=0;
+  function sizeMarquee(){mqW=mqGroup.offsetWidth;var need=Math.ceil((innerWidth*2)/Math.max(1,mqW))+1;while(mq.children.length<need){var c=mqGroup.cloneNode(true);c.setAttribute('aria-hidden','true');mq.appendChild(c)}}
+
+  function layout(){
+    var on=desk.matches&&!reduce;
+    steps.classList.toggle('is-pinned',on);
+    lev.classList.toggle('is-pinned',on);
+    if(on){levDist=Math.max(0,htrack.scrollWidth-innerWidth);hpin.style.setProperty('--x-hh',(levDist+innerHeight)+'px')}
+    else{hpin.style.removeProperty('--x-hh');htrack.style.removeProperty('--x-hx');stepEls.forEach(function(s){s.classList.add('on')});curStep=-1}
+    sizeMarquee();
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  setTimeout(onScroll,100);
+  layout();
+  window.addEventListener('resize',function(){clearTimeout(layout._t);layout._t=setTimeout(layout,150)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+
+  /* Halo qui suit doucement la souris dans le héros */
+  var gx=0,gy=0,tgx=0,tgy=0;
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();tgx=(e.clientX-r.left-r.width/2)*.12;tgy=(e.clientY-r.top-r.height/2)*.12},{passive:true});
+
+  var zoomEl=$('[data-zoom]',site),parEls=$$('[data-parallax]',site),panel=$('.x-panel'),finalBox=$('.x-final-box'),giant=$('.x-giant'),lastT=performance.now();
+  function frame(t){
+    requestAnimationFrame(frame);
+    var dt=Math.min(64,t-lastT);lastT=t;
+    if(site.classList.contains('hidden'))return;
+    var y=window.scrollY,vh=innerHeight,docH=document.documentElement.scrollHeight;
+    vel=vel*.85+(y-lastY)*.15;
+    /* En-tête et progression */
+    prog.style.setProperty('--x-sp',clamp(y/Math.max(1,docH-vh),0,1));
+    hdr.classList.toggle('is-solid',y>hero.offsetHeight-80);hdr.classList.toggle('is-dim',y>20);
+    if(!menu.classList.contains('open'))hdr.classList.toggle('is-hidden',y>lastY+1&&y>vh*1.2?true:(y<lastY-1?false:hdr.classList.contains('is-hidden')));
+    lastY=y;
+    if(reduce)return;
+    /* Bandeau : vitesse de base + vitesse du défilement */
+    if(mqW){mqX-=(.5+Math.min(Math.abs(vel),80)*.22)*dt/16;if(mqX<=-mqW)mqX+=mqW;mq.style.setProperty('--x-mx',mqX.toFixed(2)+'px')}
+    /* Héros : parallaxe en couches */
+    if(y<vh*1.2){
+      if(desk.matches){heroCopy.style.transform='translate3d(0,'+(y*.22).toFixed(1)+'px,0)';heroCopy.style.opacity=clamp(1-y/(vh*.85),0,1).toFixed(3)}else{heroCopy.style.transform='';heroCopy.style.opacity=''}
+      arch.style.setProperty('--x-py',(y*.14).toFixed(1)+'px');ring.style.setProperty('--x-py2',(y*-.06).toFixed(1)+'px');cop.style.setProperty('--x-py3',(y*-.2).toFixed(1)+'px');
+      gx+=(tgx-gx)*.06;gy+=(tgy-gy)*.06;glow.style.setProperty('--x-gx',gx.toFixed(1)+'px');glow.style.setProperty('--x-gy',(gy+y*.3).toFixed(1)+'px');
+    }
+    /* Titre rempli mot à mot */
+    if(words.length){var fr=fill.getBoundingClientRect();if(fr.top<vh&&fr.bottom>0){var p=clamp((vh*.88-fr.top)/(vh*.55),0,1)*words.length;for(var i=0;i<words.length;i++)words[i].style.setProperty('--o',(.16+.84*clamp(p-i,0,1)).toFixed(3))}}
+    /* Zoom de la photo */
+    if(zoomEl){var zr=zoomEl.getBoundingClientRect();if(zr.top<vh&&zr.bottom>0){var c=clamp((zr.top+zr.height/2-vh/2)/vh,0,1);zoomEl.style.setProperty('--x-zs',(1.03+c*.2).toFixed(4))}}
+    parEls.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)el.style.setProperty('--x-py',((r.top+r.height/2-vh/2)*+el.getAttribute('data-parallax')).toFixed(1)+'px')});
+    /* Étapes */
+    if(steps.classList.contains('is-pinned')){var pr=pin.getBoundingClientRect(),tot=pr.height-vh,sp=clamp(-pr.top/Math.max(1,tot),0,1);setStep(Math.min(stepEls.length-1,Math.floor(sp*stepEls.length)));steps.style.setProperty('--x-sp2',sp.toFixed(4))}
+    /* Leviers */
+    if(lev.classList.contains('is-pinned')){var hr=hpin.getBoundingClientRect(),hp=clamp(-hr.top/Math.max(1,hr.height-vh),0,1);htrack.style.setProperty('--x-hx',(-hp*levDist).toFixed(1)+'px');lev.style.setProperty('--x-hp',Math.max(.08,hp).toFixed(4))}
+    if(photoLever){var lr=photoLever.getBoundingClientRect();if(lr.right>0&&lr.left<innerWidth)photoLever.style.setProperty('--x-px',((lr.left+lr.width/2-innerWidth/2)*-.1).toFixed(1)+'px')}
+    /* Tableau de bord qui se redresse */
+    var kr=panel.getBoundingClientRect();if(kr.top<vh&&kr.bottom>0){var kp=clamp((vh-kr.top)/(vh*.75),0,1);panel.style.setProperty('--x-tilt',((1-kp)*16).toFixed(2)+'deg');panel.style.setProperty('--x-ty',((1-kp)*50).toFixed(1)+'px')}
+    /* Appel final : l'image s'ouvre jusqu'aux bords */
+    var cr=finalBox.getBoundingClientRect();if(cr.top<vh&&cr.bottom>0){var cp=clamp((vh-cr.top)/(vh*.85),0,1);finalBox.style.setProperty('--x-ci',((1-cp)*6).toFixed(2)+'%');finalBox.style.setProperty('--x-cr',(4+(1-cp)*24).toFixed(1)+'px');finalBox.style.setProperty('--x-cz',(1.22-cp*.2).toFixed(4))}
+    /* Grand logo du pied de page */
+    var gr=giant.getBoundingClientRect();if(gr.top<vh)giant.style.setProperty('--x-gx2',(Math.max(0,gr.top-vh*.55)*.35).toFixed(1)+'px');
+  }
+  requestAnimationFrame(frame);
 })();
 
 /* ---------- Pop-up contact ---------- */
