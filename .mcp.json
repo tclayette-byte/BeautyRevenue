@@ -1,8 +1,9 @@
 {
   "mcpServers": {
     "shadcn": {
-      "command": "npx",
-      "args": ["shadcn@latest", "mcp", "--cwd", "app"]
+      "command": "/bin/sh",
+      "args": ["-c", "cd app && exec /opt/homebrew/bin/npx shadcn@latest mcp"],
+      "env": { "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin" }
     }
   }
 }
