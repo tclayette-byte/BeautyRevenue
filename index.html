@@ -1799,7 +1799,7 @@ var normPhone=function(p){var d=(p||'').replace(/[^\d+]/g,'');if(d.charAt(0)==='
 /* ---------- Routage ---------- */
 var views={site:$('#view-site'),login:$('#view-login'),app:$('#view-app')};
 function isAuth(){return !!(store.get('br7_session')||sessionStorage.getItem('br7_session'))}
-function route(){var h=location.hash||'#/';if(h.indexOf('#/connexion')===0){if(isAuth()){location.hash='#/app';return}show('login');return}if(h.indexOf('#/app')===0){if(!isAuth()){location.hash='#/connexion';return}show('app');renderApp(h.replace('#/app','').replace(/^\//,'')||'dashboard');return}show('site');if(h.length>1&&h.charAt(1)!=='/'){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView()}else maybeAutoPres()}
+function route(){var h=location.hash||'#/';if(h.indexOf('#/connexion')===0||h.indexOf('#/app')===0){location.replace('outil/'+h);return}if(h.indexOf('#/connexion')===0){if(isAuth()){location.hash='#/app';return}show('login');return}if(h.indexOf('#/app')===0){if(!isAuth()){location.hash='#/connexion';return}show('app');renderApp(h.replace('#/app','').replace(/^\//,'')||'dashboard');return}show('site');if(h.length>1&&h.charAt(1)!=='/'){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView()}else maybeAutoPres()}
 function show(v){Object.keys(views).forEach(function(k){views[k].classList.toggle('hidden',k!==v)});window.scrollTo(0,0);document.body.classList.remove('locked');if(v!=='app')endTour(true)}
 window.addEventListener('hashchange',route);
 function maybeAutoPres(){if(store.get('br7_pres_seen'))return;store.set('br7_pres_seen',true);setTimeout(function(){if(!pres.classList.contains('open')&&!$('#view-site').classList.contains('hidden'))openPres()},1200)}

@@ -5,10 +5,16 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Chemins relatifs : le build est servi tel quel depuis /outil/
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
+  },
+  build: {
+    outDir: '../outil',
+    emptyOutDir: true,
   },
 })
